@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import LocalizedStrings from 'react-localization';
-import withLanguage from '@mlambda-net/core/common/language';
+import withLanguage from '@mlambda-net/core/lang/language';
 import { Valid } from '@mlambda-net/core/common/validations';
 
 const valid = Valid;
@@ -34,21 +34,7 @@ const language = new LocalizedStrings({
   },
 });
 
-const styles = (theme) => ({
-  root: {},
-  logo: {
-    height: '100%',
-  },
-  icon: {
-    width: '200px',
-  },
-  login: {
-    backgroundColor: theme.palette.background.default,
-    padding: '20px',
-    height: 'calc(100% - 40px)',
-    borderRadius: '10px',
-  },
-});
+const styles = (theme) => ({});
 
 export class SignIn extends React.Component {
   constructor(props) {
@@ -108,87 +94,63 @@ export class SignIn extends React.Component {
 
   render() {
     language.setLanguage(this.props.lang);
-    const { classes } = this.props;
     return (
-      <Paper elevation={10} className={this.props.className}>
-        <Box p={3}>
-          <Grid container spacing={0}>
-            <Grid item xs={'auto'} sm={6}>
-              <Box
-                className={classes.logo}
-                display="flex"
-                justifyContent="center"
-                alignItems="center">
-                {this.props.icon}
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Box className={classes.login}>
-                <Box display="flex" justifyContent="center">
-                  <Typography
-                    color="primary"
-                    variant="h4"
-                    component="h5"
-                    gutterBottom>
-                    {this.props.title}
-                  </Typography>
-                </Box>
-                <Box
-                  display="flex"
-                  flexDirection="column"
-                  justifyContent="center"
-                  m={1}
-                  p={1}>
-                  <Box p={1}>
-                    <FormControl fullWidth>
-                      <TextField
-                        label={language.email}
-                        color="secondary"
-                        id="email"
-                        type="email"
-                        error={!this.state.validEmail}
-                        onChange={this.emailChange}
-                        helperText={this.state.helpEmail}
-                      />
-                    </FormControl>
-                  </Box>
-                  <Box p={1}>
-                    <FormControl fullWidth>
-                      <TextField
-                        id="password"
-                        label={language.password}
-                        color="secondary"
-                        type="password"
-                        error={!this.state.validPassword}
-                        onChange={this.passwordChange}
-                        helperText={this.state.helpPassword}
-                      />
-                    </FormControl>
-                  </Box>
-
-                  <Box p={1} m={2} display="flex" justifyContent="flex-end">
-                    <Link color="secondary" onClick={this.props.onForgot}>
-                      <Typography variant="caption">
-                        {language.forgot}
-                      </Typography>
-                    </Link>
-                  </Box>
-
-                  <Box p={1} m={1} display="flex" justifyContent="flex-end">
-                    <Button
-                      variant="outlined"
-                      color="primary"
-                      disabled={!this.isValid()}
-                      onClick={this.loginClick}>
-                      {language.login}
-                    </Button>
-                  </Box>
-                </Box>
-              </Box>
-            </Grid>
-          </Grid>
+      <Box width="100%">
+        <Box display="flex" justifyContent="center">
+          <Typography color="primary" variant="h4" component="h5" gutterBottom>
+            {this.props.title}
+          </Typography>
         </Box>
-      </Paper>
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          m={1}
+          p={1}>
+          <Box p={1}>
+            <FormControl fullWidth>
+              <TextField
+                label={language.email}
+                color="secondary"
+                id="email"
+                type="email"
+                error={!this.state.validEmail}
+                onChange={this.emailChange}
+                helperText={this.state.helpEmail}
+              />
+            </FormControl>
+          </Box>
+          <Box p={1}>
+            <FormControl fullWidth>
+              <TextField
+                id="password"
+                label={language.password}
+                color="secondary"
+                type="password"
+                error={!this.state.validPassword}
+                onChange={this.passwordChange}
+                helperText={this.state.helpPassword}
+              />
+            </FormControl>
+          </Box>
+
+          <Box p={1} m={2} display="flex" justifyContent="flex-end">
+            <Link color="secondary" onClick={this.props.onForgot}>
+              <Typography variant="caption">{language.forgot}</Typography>
+            </Link>
+          </Box>
+
+          <Box p={1} m={1} display="flex" justifyContent="flex-end">
+            <Button
+              variant="outlined"
+              color="primary"
+              disabled={!this.isValid()}
+              onClick={this.loginClick}>
+              {language.login}
+            </Button>
+          </Box>
+        </Box>
+      </Box>
     );
   }
 }

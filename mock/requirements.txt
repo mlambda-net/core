@@ -1,4 +1,0 @@
-Flask
-wheel
-tinydb
-flask-swagger

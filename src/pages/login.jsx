@@ -4,16 +4,19 @@ import { withStyles, withTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import login from '../assets/img/login.png';
 import SignIn from '@mlambda-net/core/login/signin';
+import LeftImage from '@mlambda-net/core/common/leftimage';
 
 const styles = (themes) => ({
   root: {
-    height: '100%',
+    display: 'flex',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+    width: '100%',
   },
-  login: {
-    width: '600px',
-  },
+  login: {},
 });
 
 class Login extends React.Component {
@@ -26,16 +29,12 @@ class Login extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        className={classes.root}>
-        <SignIn
-          className={classes.login}
-          icon={<img src={login} width="100%" />}
-          onLogin={this.onLogin}
-        />
+      <Box className={classes.root}>
+        <Box width={'500px'}>
+          <LeftImage img={<img src={login} width="100%" alt="img" />}>
+            <SignIn onLogin={this.onLogin} />
+          </LeftImage>
+        </Box>
       </Box>
     );
   }

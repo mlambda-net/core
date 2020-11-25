@@ -3,6 +3,21 @@ import pink from '@material-ui/core/colors/pink';
 import teal from '@material-ui/core/colors/teal';
 
 export const theme = createMuiTheme({
+  typography: {
+    fontSize: 12,
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
   palette: {
     primary: {
       main: pink[500],

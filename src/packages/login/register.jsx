@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import LocalizedStrings from 'react-localization';
-import withLanguage from '@mlambda-net/core/common/language';
+import withLanguage from '@mlambda-net/core/lang/language';
 import { Valid } from '@mlambda-net/core/common/validations';
 
 const valid = Valid;

@@ -9,7 +9,6 @@ import login from '../../src/assets/img/login.png';
 export const LoginStory = () => (
   <SignIn
     title={text('Title', 'Welcome')}
-    icon={<img src={login} width="100%" />}
     onLogin={action('login')}
     onForgot={action('forgot')}
   />

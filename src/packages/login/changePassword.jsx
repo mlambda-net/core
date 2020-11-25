@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import LocalizedStrings from 'react-localization';
-import withLanguage from '@mlambda-net/core/common/language';
+import withLanguage from '@mlambda-net/core/lang/language';
 import { Valid } from '@mlambda-net/core/common/validations';
 
 const valid = Valid;
@@ -21,7 +21,7 @@ const language = new LocalizedStrings({
     email: 'Email',
     errorNewPassword: 'new password is required',
     errorOldPassword: 'old password is required',
-    changeAction: 'submit'
+    changeAction: 'submit',
   },
   es: {
     title: 'Cambiar contraseña',
@@ -30,7 +30,7 @@ const language = new LocalizedStrings({
     email: 'Email',
     errorNewPassword: 'la contraseña nueva es requerida',
     errorOldPassword: 'la contraseña actual es requerida',
-    changeAction: 'cambiar'
+    changeAction: 'cambiar',
   },
 });
 
@@ -66,7 +66,6 @@ class ChangePassword extends React.Component {
     this.newPasswordChange = this.newPasswordHandle.bind(this);
     this.oldPasswordChange = this.oldPasswordHandle.bind(this);
     this.changeClick = this.changeHandle.bind(this);
-
   }
 
   render() {
@@ -90,7 +89,6 @@ class ChangePassword extends React.Component {
             justifyContent="center"
             m={1}
             p={1}>
-
             <Box p={1}>
               <FormControl fullWidth>
                 <TextField
@@ -134,39 +132,49 @@ class ChangePassword extends React.Component {
     );
   }
 
-
   newPasswordHandle(event) {
-    const password = event.target.value
+    const password = event.target.value;
     if (valid.isEmpty(password)) {
-      this.setState({ validOldPassword: false, errorNewPassword: language.errorNewPassword })
+      this.setState({
+        validOldPassword: false,
+        errorNewPassword: language.errorNewPassword,
+      });
     } else {
-      this.setState({ newPassword: password, validNewPassword: true, errorNewPassword: '' })
+      this.setState({
+        newPassword: password,
+        validNewPassword: true,
+        errorNewPassword: '',
+      });
     }
   }
 
   oldPasswordHandle(event) {
-    const password = event.target.value
+    const password = event.target.value;
     if (valid.isEmpty(password)) {
-      this.setState({ validOldPassword: false, errorOldPassword: language.errorOldPassword })
+      this.setState({
+        validOldPassword: false,
+        errorOldPassword: language.errorOldPassword,
+      });
     } else {
-      this.setState({ oldPassword: password, validOldPassword: true, errorOldPassword: '' })
+      this.setState({
+        oldPassword: password,
+        validOldPassword: true,
+        errorOldPassword: '',
+      });
     }
   }
 
-
-
   changeHandle(event) {
-
-      this.props.onChange({
-        newPassword: this.state.newPassword,
-        oldPassword: this.state.oldPassword,
-      });
+    this.props.onChange({
+      newPassword: this.state.newPassword,
+      oldPassword: this.state.oldPassword,
+    });
 
     event.preventDefault();
   }
 
   isValid() {
-    return this.state.validNewPassword && this.state.validOldPassword
+    return this.state.validNewPassword && this.state.validOldPassword;
   }
 }
 

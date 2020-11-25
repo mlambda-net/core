@@ -1,5 +1,5 @@
 import React from 'react';
-import { LanguageContext } from '@mlambda-net/core/common/context';
+import { LanguageContext } from '@mlambda-net/core/lang/context';
 
 const withLanguage = (Component) => {
   return (props) => (

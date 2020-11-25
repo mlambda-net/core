@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { expect } from '@jest/globals';
 import Header from '@mlambda-net/core/layout/header';
-import LangProvider from '@mlambda-net/core/common/langprovider';
+import LangProvider from '@mlambda-net/core/lang/langprovider';
 
 test('Header render', () => {
   const item = renderer.create(
