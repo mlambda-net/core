@@ -15,22 +15,22 @@ const valid = Valid;
 
 const language = new LocalizedStrings({
   en: {
-    register: 'Sign up',
-    password: 'Password',
-    confirm: 'Confirm password',
+    title: 'Change Password',
+    newPassword: 'New Password',
+    oldPassword: 'Old Password',
     email: 'Email',
-    invalidEmail: 'invalid email',
-    invalidPassword: 'password is required',
-    noMatch: 'passwords are different',
+    errorNewPassword: 'new password is required',
+    errorOldPassword: 'old password is required',
+    changeAction: 'submit'
   },
   es: {
-    register: 'Registrarse',
-    password: 'Contraseña',
-    confirm: 'Confirmar contraseña',
-    email: 'Correo',
-    invalidEmail: 'correo invalido',
-    invalidPassword: 'una contraseña es requerida',
-    noMatch: 'las contraseñas son diferentes',
+    title: 'Cambiar contraseña',
+    newPassword: 'Contraseña Nueva',
+    oldPassword: 'Contraseña Actual',
+    email: 'Email',
+    errorNewPassword: 'la contraseña nueva es requerida',
+    errorOldPassword: 'la contraseña actual es requerida',
+    changeAction: 'cambiar'
   },
 });
 
@@ -55,19 +55,18 @@ class ChangePassword extends React.Component {
     super(props);
     this.valid = Valid;
     this.state = {
-      email: '',
-      password: '',
-      confirm: '',
-      validEmail: false,
-      validPassword: false,
-      validConfirm: false,
-      helpEmail: '',
-      helpPassword: '',
+      newPassword: '',
+      oldPassword: '',
+      validOldPassword: false,
+      validNewPassword: false,
+      errorNewPassword: '',
+      errorOldPassword: '',
     };
-    this.emailChange = this.emailChangeHandle.bind(this);
-    this.passwordChange = this.passwordChangeHandle.bind(this);
-    this.loginClick = this.loginHandle.bind(this);
-    this.confirmChange = this.confirmHandle.bind(this);
+
+    this.newPasswordChange = this.newPasswordHandle.bind(this);
+    this.oldPasswordChange = this.oldPasswordHandle.bind(this);
+    this.changeClick = this.changeHandle.bind(this);
+
   }
 
   render() {
@@ -82,7 +81,7 @@ class ChangePassword extends React.Component {
               variant="h4"
               component="h5"
               gutterBottom>
-              {language.register}
+              {language.title}
             </Typography>
           </Box>
           <Box
@@ -91,29 +90,17 @@ class ChangePassword extends React.Component {
             justifyContent="center"
             m={1}
             p={1}>
-            <Box p={1}>
-              <FormControl fullWidth>
-                <TextField
-                  id="email"
-                  color="secondary"
-                  label={language.email}
-                  type="email"
-                  error={!this.state.validEmail}
-                  onChange={this.emailChange}
-                  helperText={this.state.helpEmail}
-                />
-              </FormControl>
-            </Box>
+
             <Box p={1}>
               <FormControl fullWidth>
                 <TextField
                   id="password"
-                  label={language.password}
+                  label={language.oldPassword}
                   color="secondary"
                   type="password"
-                  error={!this.state.validPassword}
-                  onChange={this.passwordChange}
-                  helperText={this.state.helpPassword}
+                  error={!this.state.validOldPassword}
+                  onChange={this.oldPasswordChange}
+                  helperText={this.state.errorOldPassword}
                 />
               </FormControl>
             </Box>
@@ -122,12 +109,12 @@ class ChangePassword extends React.Component {
               <FormControl fullWidth>
                 <TextField
                   id="confirm_password"
-                  label={language.confirm}
+                  label={language.newPassword}
                   color="secondary"
                   type="password"
-                  error={!this.state.validConfirm}
-                  onChange={this.confirmChange}
-                  helperText={this.state.helpConfirm}
+                  error={!this.state.validNewPassword}
+                  onChange={this.newPasswordChange}
+                  helperText={this.state.errorNewPassword}
                 />
               </FormControl>
             </Box>
@@ -136,8 +123,9 @@ class ChangePassword extends React.Component {
               <Button
                 variant="outlined"
                 color="primary"
-                onClick={this.loginClick}>
-                {language.register}
+                disabled={!this.isValid()}
+                onClick={this.changeClick}>
+                {language.changeAction}
               </Button>
             </Box>
           </Box>
@@ -146,84 +134,46 @@ class ChangePassword extends React.Component {
     );
   }
 
-  checkEmail() {
-    if (valid.email(this.state.email)) {
-      this.setState({ validEmail: true, helpEmail: '' });
-      return true;
-    }
 
-    this.setState({ validEmail: false, helpEmail: language.invalidEmail });
-    return false;
+  newPasswordHandle(event) {
+    const password = event.target.value
+    if (valid.isEmpty(password)) {
+      this.setState({ validOldPassword: false, errorNewPassword: language.errorNewPassword })
+    } else {
+      this.setState({ newPassword: password, validNewPassword: true, errorNewPassword: '' })
+    }
   }
 
-  checkPassword() {
-    if (!valid.isEmpty(this.state.password)) {
-      this.setState({
-        validPassword: true,
-        helpPassword: '',
+  oldPasswordHandle(event) {
+    const password = event.target.value
+    if (valid.isEmpty(password)) {
+      this.setState({ validOldPassword: false, errorOldPassword: language.errorOldPassword })
+    } else {
+      this.setState({ oldPassword: password, validOldPassword: true, errorOldPassword: '' })
+    }
+  }
+
+
+
+  changeHandle(event) {
+
+      this.props.onChange({
+        newPassword: this.state.newPassword,
+        oldPassword: this.state.oldPassword,
       });
-      return true;
-    }
-    this.setState({
-      validPassword: false,
-      helpPassword: language.invalidPassword,
-    });
-    return false;
-  }
 
-  checkConfirm() {
-    if (valid.equals(this.state.password, this.state.confirm)) {
-      this.setState({
-        validConfirm: true,
-        helpConfirm: '',
-      });
-      return true;
-    }
-
-    this.setState({
-      validConfirm: false,
-      helpConfirm: language.noMatch,
-    });
-    return false;
-  }
-
-  emailChangeHandle(event) {
-    this.setState({ email: event.target.value });
-  }
-
-  passwordChangeHandle(event) {
-    this.setState({ password: event.target.value });
-  }
-
-  confirmHandle(event) {
-    this.setState({ confirm: event.target.value });
-  }
-
-  loginHandle(event) {
-    if (this.isValid()) {
-      this.props.onLogin({
-        email: this.state.email,
-        password: this.state.password,
-      });
-    }
     event.preventDefault();
   }
 
   isValid() {
-    let email = this.checkEmail();
-    let pass = this.checkPassword();
-    let conf = this.checkConfirm();
-    return email && pass && conf;
+    return this.state.validNewPassword && this.state.validOldPassword
   }
 }
 
 ChangePassword.protoTypes = {
-  title: PropTypes.bool,
   className: '',
   classes: PropTypes.object.isRequired,
-  onLogin: PropTypes.func,
-  onForgot: PropTypes.func,
-  icon: PropTypes.element,
+  onChange: PropTypes.func,
   lang: PropTypes.string,
 };
 
