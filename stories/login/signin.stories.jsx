@@ -1,6 +1,7 @@
 import React from 'react';
 import { text } from '@storybook/addon-knobs';
-import SignIn from '../../src/packages/login/signin';
+
+import {SignIn} from '@mlambda-net/core/login'
 import FaceIcon from '@material-ui/icons/Face';
 import { action } from '@storybook/addon-actions';
 

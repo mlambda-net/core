@@ -36,7 +36,7 @@ const language = new LocalizedStrings({
 
 const styles = (theme) => ({});
 
-export class SignIn extends React.Component {
+class SignIn extends React.Component {
   constructor(props) {
     super(props);
 

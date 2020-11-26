@@ -2,7 +2,7 @@ import React from 'react';
 
 import { action } from '@storybook/addon-actions';
 
-import ChangePassword from '@mlambda-net/core/login/changePassword'
+import {ChangePassword} from '@mlambda-net/core/login'
 
 export const ChangePasswordStory = () => {
   return <ChangePassword onChange={action('login')} />;

@@ -5,7 +5,7 @@ import Register from '@mlambda-net/core/login/register';
 
 test('Register Test', () => {
   const item = renderer.create(
-    <Register onRegister={() => console.log('login')}></Register>
+    <Register onRegister={() => console.log('login')}/>
   );
   let tree = item.toJSON();
   expect(tree).toMatchSnapshot();

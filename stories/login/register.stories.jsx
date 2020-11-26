@@ -1,7 +1,7 @@
 import React from 'react';
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import Register from '@mlambda-net/core/login/register';
+import {Register} from '@mlambda-net/core/login';
 
 export const RegisterStory = () => {
   return <Register onRegister={action('login')} />;

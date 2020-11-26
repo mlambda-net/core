@@ -1,14 +1,11 @@
 import React from 'react';
-import { text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
 import { makeStyles } from '@material-ui/core/styles';
-import Profile from '@mlambda-net/core/login/profile';
+import {Profile} from '@mlambda-net/core/login';
 import { AppBar, Toolbar } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
 import Label from '@mlambda-net/core/common/label';
-import CardContent from '@material-ui/core/CardContent';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 
