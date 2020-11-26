@@ -15,7 +15,7 @@ import { Valid } from '@mlambda-net/core/common/validations';
 
 const styles = (theme) => ({});
 
-export class LeftImage extends React.Component {
+class LeftImage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};

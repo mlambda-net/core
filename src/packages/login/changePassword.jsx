@@ -1,6 +1,5 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 import { withStyles, withTheme } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import Box from '@material-ui/core/Box';
@@ -9,7 +8,7 @@ import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import LocalizedStrings from 'react-localization';
 import withLanguage from '@mlambda-net/core/lang/language';
-import { Valid } from '@mlambda-net/core/common/validations';
+import { Valid, Title } from '@mlambda-net/core/common';
 
 const valid = Valid;
 
@@ -75,13 +74,7 @@ class ChangePassword extends React.Component {
       <Paper elevation={10} className={this.props.className}>
         <Box p={3}>
           <Box display="flex" justifyContent="center">
-            <Typography
-              color="primary"
-              variant="h4"
-              component="h5"
-              gutterBottom>
-              {language.title}
-            </Typography>
+            <Title title={language.title}/>
           </Box>
           <Box
             display="flex"
