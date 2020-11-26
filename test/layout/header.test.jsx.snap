@@ -2,7 +2,7 @@
 
 exports[`Header render 1`] = `
 <div
-  className="Header-root-1"
+  className="Component-root-1"
 >
   <header
     className="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
@@ -12,10 +12,9 @@ exports[`Header render 1`] = `
     >
       <button
         aria-label="menu"
-        className="MuiButtonBase-root MuiIconButton-root Header-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+        className="MuiButtonBase-root MuiIconButton-root Component-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
         disabled={false}
         onBlur={[Function]}
-        onClick={[Function]}
         onDragLeave={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -28,7 +27,7 @@ exports[`Header render 1`] = `
         onTouchStart={[Function]}
         style={
           Object {
-            "display": "none",
+            "display": "",
           }
         }
         tabIndex={0}
@@ -50,7 +49,7 @@ exports[`Header render 1`] = `
         </span>
       </button>
       <h6
-        className="MuiTypography-root Header-title-3 MuiTypography-h6"
+        className="MuiTypography-root Component-title-3 MuiTypography-h6"
       >
         app
       </h6>

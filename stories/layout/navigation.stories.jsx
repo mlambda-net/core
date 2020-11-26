@@ -1,9 +1,8 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, text } from '@storybook/addon-knobs';
-import Navigation from '../../src/packages/layout/navigation';
+import { Navigation } from '@mlambda-net/core/common';
 import description from './navigation.md';
-import { HeaderStory } from './header.stories';
 
 export const NavigationStory = () => (
   <Navigation

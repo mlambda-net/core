@@ -1,16 +1,13 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
-import { withStyles, withTheme } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import LocalizedStrings from 'react-localization';
-import withLanguage from '@mlambda-net/core/lang/language';
-import { Valid, Title } from '@mlambda-net/core/common';
-
-const valid = Valid;
+import { withUtils } from '@mlambda-net/core/utils';
+import { Title } from '@mlambda-net/core/common';
 
 const language = new LocalizedStrings({
   en: {
@@ -33,26 +30,12 @@ const language = new LocalizedStrings({
   },
 });
 
-const styles = (theme) => ({
-  root: {},
-  logo: {
-    height: '100%',
-  },
-  icon: {
-    width: '200px',
-  },
-  login: {
-    backgroundColor: theme.palette.background.default,
-    padding: '20px',
-    height: 'calc(100% - 40px)',
-    borderRadius: '10px',
-  },
-});
+const styles = (theme) => ({});
 
 class ChangePassword extends React.Component {
   constructor(props) {
     super(props);
-    this.valid = Valid;
+
     this.state = {
       newPassword: '',
       oldPassword: '',
@@ -62,6 +45,7 @@ class ChangePassword extends React.Component {
       errorOldPassword: '',
     };
 
+    this.valid = this.props.validation;
     this.newPasswordChange = this.newPasswordHandle.bind(this);
     this.oldPasswordChange = this.oldPasswordHandle.bind(this);
     this.changeClick = this.changeHandle.bind(this);
@@ -74,7 +58,7 @@ class ChangePassword extends React.Component {
       <Paper elevation={10} className={this.props.className}>
         <Box p={3}>
           <Box display="flex" justifyContent="center">
-            <Title title={language.title}/>
+            <Title title={language.title} />
           </Box>
           <Box
             display="flex"
@@ -127,7 +111,7 @@ class ChangePassword extends React.Component {
 
   newPasswordHandle(event) {
     const password = event.target.value;
-    if (valid.isEmpty(password)) {
+    if (this.valid.isEmpty(password)) {
       this.setState({
         validOldPassword: false,
         errorNewPassword: language.errorNewPassword,
@@ -143,7 +127,7 @@ class ChangePassword extends React.Component {
 
   oldPasswordHandle(event) {
     const password = event.target.value;
-    if (valid.isEmpty(password)) {
+    if (this.valid.isEmpty(password)) {
       this.setState({
         validOldPassword: false,
         errorOldPassword: language.errorOldPassword,
@@ -172,10 +156,10 @@ class ChangePassword extends React.Component {
 }
 
 ChangePassword.protoTypes = {
-  className: '',
+  className: PropTypes.string,
   classes: PropTypes.object.isRequired,
   onChange: PropTypes.func,
   lang: PropTypes.string,
 };
 
-export default withStyles(styles)(withTheme(withLanguage(ChangePassword)));
+export default withUtils(styles)(ChangePassword);

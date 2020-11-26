@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from '../../src/packages/layout/menu';
+import { Menu } from '@mlambda-net/core/common';
 import { text } from '@storybook/addon-knobs';
 
 export const MenuStory = () => (

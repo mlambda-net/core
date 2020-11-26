@@ -1,10 +1,9 @@
 import React from 'react';
-
-import { withStyles, withTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import login from '../assets/img/login.png';
-import SignIn from '@mlambda-net/core/login/signin';
-import LeftImage from '@mlambda-net/core/common/leftimage';
+import { LeftImage } from '@mlambda-net/core/common';
+import { SignIn } from '@mlambda-net/core/login';
+import { withUtils } from '@mlambda-net/core/utils';
 
 const styles = (themes) => ({
   root: {
@@ -27,7 +26,6 @@ class Login extends React.Component {
 
   render() {
     const { classes } = this.props;
-
     return (
       <Box className={classes.root}>
         <Box width={'500px'}>
@@ -44,4 +42,4 @@ class Login extends React.Component {
   }
 }
 
-export default withStyles(styles)(withTheme(Login));
+export default withUtils(styles)(Login);

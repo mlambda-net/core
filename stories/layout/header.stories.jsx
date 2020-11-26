@@ -1,12 +1,9 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-
-
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
-
 import IconButton from '@material-ui/core/IconButton';
 import { AccountCircle } from '@material-ui/icons';
-import Header from '../../src/packages/layout/header';
+import { Header } from '@mlambda-net/core/common';
 
 export const HeaderStory = () => (
   <Header name={text('Name', 'App')} onClick={action('button-click')}>

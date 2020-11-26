@@ -1,22 +1,16 @@
 import React from 'react';
-import { withStyles, withTheme } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import LocalizedStrings from 'react-localization';
-import withLanguage from '@mlambda-net/core/lang/language';
-import { Valid } from '@mlambda-net/core/common/validations';
 import Box from '@material-ui/core/Box';
-
-const valid = Valid;
+import { withUtils } from '@mlambda-net/core/utils';
 
 const language = new LocalizedStrings({
-  en: {
-  },
-  es: {
-  },
+  en: {},
+  es: {},
 });
 
 const styles = (theme) => {
-  return ({})
+  return {};
 };
 
 class Skeleton extends React.Component {
@@ -25,14 +19,9 @@ class Skeleton extends React.Component {
     this.state = {};
   }
 
-
   render() {
     language.setLanguage(this.props.lang);
-    return (
-      <Box width="100%">
-        Skeleton
-      </Box>
-    );
+    return <Box width="100%">Skeleton</Box>;
   }
 }
 
@@ -42,4 +31,4 @@ Skeleton.protoTypes = {
   lang: PropTypes.string,
 };
 
-export default  withStyles(styles)(withTheme(withLanguage(Skeleton)));
+export default withUtils(styles)(Skeleton);

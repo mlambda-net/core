@@ -1,8 +1,7 @@
-import { withStyles, withTheme } from '@material-ui/core/styles';
-import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
+import { withThemes } from '@mlambda-net/core/utils';
 
 const styles = (theme) => ({
   menu: {
@@ -18,12 +17,6 @@ const styles = (theme) => ({
 });
 
 class Menu extends React.Component {
-  static defaultProps = {
-    name: PropTypes.string,
-    onClick: PropTypes.func,
-    classes: PropTypes.object.isRequired,
-  };
-
   render() {
     const { classes } = this.props;
     return (
@@ -34,4 +27,10 @@ class Menu extends React.Component {
   }
 }
 
-export default withStyles(styles)(withTheme(Menu));
+Menu.protoTypes = {
+  name: PropTypes.string,
+  onClick: PropTypes.func,
+  classes: PropTypes.object.isRequired,
+};
+
+export default withThemes(styles)(Menu);

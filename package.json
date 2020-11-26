@@ -25,6 +25,7 @@
     "@babel/plugin-proposal-export-default-from": "^7.12.1",
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
+    "@jest/globals": "^26.6.2",
     "@material-ui/icons": "^4.9.1",
     "@storybook/addon-actions": "^6.1.6",
     "@storybook/addon-backgrounds": "^6.1.6",
@@ -56,6 +57,7 @@
     "prettier": "2.2.0",
     "prop-types": "^15.7.2",
     "react-test-renderer": "^17.0.1",
+    "regenerator-runtime": "^0.13.7",
     "sass-loader": "^10.1.0",
     "storybook-dark-mode": "^1.0.3",
     "style-loader": "^2.0.0",
@@ -64,9 +66,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@jest/globals": "^26.6.2",
     "@material-ui/core": "^4.11.0",
     "axios": "^0.21.0",
+    "babel-plugin-module-resolver": "^4.0.0",
     "clsx": "^1.1.1",
     "fluture": "^13.0.1",
     "monet": "^0.9.1",
@@ -75,13 +77,5 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-localization": "^1.0.15"
-  },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy",
-      "@mlambda-net/core/(.*)$": "<rootDir>/src/packages/$1"
-
-    },
-    "snapshotResolver": "./config/snapshot_resolver_test"
   }
 }

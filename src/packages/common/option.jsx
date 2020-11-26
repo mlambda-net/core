@@ -1,10 +1,8 @@
 import React from 'react';
-import { withStyles, withTheme } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import withLanguage from '@mlambda-net/core/lang/language';
 import { IconButton } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
-import Card from '@material-ui/core/Card';
+import { withThemes } from '@mlambda-net/core/utils';
 
 const styles = (theme) => ({
   container: {
@@ -58,4 +56,4 @@ Option.protoTypes = {
   height: PropTypes.string,
 };
 
-export default withStyles(styles)(withTheme(withLanguage(Option)));
+export default withThemes(styles)(Option);

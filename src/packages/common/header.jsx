@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { AppBar, Toolbar, IconButton } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
-import { withStyles } from '@material-ui/core/styles';
+import { withThemes } from '@mlambda-net/core/utils';
 
 const styles = (theme) => ({
   root: {
@@ -18,14 +18,6 @@ const styles = (theme) => ({
 });
 
 class Header extends React.Component {
-  static defaultProps = {
-    open: PropTypes.bool,
-    className: '',
-    name: PropTypes.string,
-    classes: PropTypes.object.isRequired,
-    onClick: PropTypes.func,
-  };
-
   constructor(props) {
     super(props);
   }
@@ -56,4 +48,12 @@ class Header extends React.Component {
   }
 }
 
-export default withStyles(styles)(Header);
+Header.protoTypes = {
+  open: PropTypes.bool,
+  className: PropTypes.string,
+  name: PropTypes.string,
+  classes: PropTypes.object.isRequired,
+  onClick: PropTypes.func,
+};
+
+export default withThemes(styles)(Header);

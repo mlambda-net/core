@@ -4,9 +4,9 @@ import { LanguageContext } from '@mlambda-net/core/lang/context';
 const withLanguage = (Component) => {
   return (props) => (
     <LanguageContext.Consumer>
-      {(value) => <Component lang={value} {...props} />}
+      {(value) => <Component lang={value} {...props}  />}
     </LanguageContext.Consumer>
   );
 };
 
-export default withLanguage;
+export {withLanguage};

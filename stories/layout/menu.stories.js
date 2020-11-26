@@ -7,7 +7,7 @@ exports["default"] = exports.MenuStory = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _menu = _interopRequireDefault(require("../../src/packages/layout/menu"));
+var _menu = _interopRequireDefault(require("@mlambda-net/core/common/menu"));
 
 var _addonKnobs = require("@storybook/addon-knobs");
 

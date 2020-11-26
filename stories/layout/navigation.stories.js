@@ -11,7 +11,7 @@ var _addonActions = require("@storybook/addon-actions");
 
 var _addonKnobs = require("@storybook/addon-knobs");
 
-var _navigation = _interopRequireDefault(require("../../src/packages/layout/navigation"));
+var _navigation = _interopRequireDefault(require("@mlambda-net/core/common/navigation"));
 
 var _navigation2 = _interopRequireDefault(require("./navigation.md"));
 

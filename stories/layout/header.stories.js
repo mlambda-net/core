@@ -9,7 +9,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _addonActions = require("@storybook/addon-actions");
 
-var _header = _interopRequireDefault(require("../../src/packages/layout/header"));
+var _header = _interopRequireDefault(require("@mlambda-net/core/common/header"));
 
 var _addonKnobs = require("@storybook/addon-knobs");
 

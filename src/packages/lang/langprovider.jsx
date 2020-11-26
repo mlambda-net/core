@@ -12,4 +12,4 @@ class LangProvider extends React.Component {
 }
 LangProvider.contextType = LanguageContext;
 
-export default LangProvider;
+export { LangProvider };

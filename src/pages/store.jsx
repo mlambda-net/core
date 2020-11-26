@@ -1,10 +1,10 @@
 import Catalog from '../packages/market/catalog';
 import React from 'react';
 import { withStyles, withTheme } from '@material-ui/core/styles';
-import Header from '../packages/layout/header';
 import cls from 'clsx';
-import Navigation from '../packages/layout/navigation';
-
+import Box from '@material-ui/core/Box';
+import { Header } from '@mlambda-net/core/common';
+import Navigation from '@mlambda-net/core/common/navigation';
 
 const drawerWidth = 240;
 
@@ -47,7 +47,7 @@ class Store extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.root}>
+      <Box className={classes.root}>
         <div className={classes.header}>
           <Header
             name="my tienda"
@@ -74,7 +74,7 @@ class Store extends React.Component {
           )}>
           <Catalog />
         </div>
-      </div>
+      </Box>
     );
   }
 }

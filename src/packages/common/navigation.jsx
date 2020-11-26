@@ -6,6 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { withThemes } from '@mlambda-net/core/utils';
 
 const styles = (theme) => ({
   root: {
@@ -30,19 +31,9 @@ const styles = (theme) => ({
 });
 
 class Navigation extends React.Component {
-  static defaultProps = {
-    name: PropTypes.string,
-    open: PropTypes.bool,
-    position: 'left',
-    width: '240px',
-    classes: PropTypes.object.isRequired,
-    themes: PropTypes.object.isRequired,
-    onClose: PropTypes.func,
-  };
-
   constructor(props) {
     super(props);
-    this.onChange = this.emitChange.bind(this)
+    this.onChange = this.emitChange.bind(this);
   }
 
   emitChange(event) {
@@ -79,4 +70,14 @@ class Navigation extends React.Component {
   };
 }
 
-export default withStyles(styles)(withTheme(Navigation));
+Navigation.protoTypes = {
+  name: PropTypes.string,
+  open: PropTypes.bool,
+  position: PropTypes.string,
+  width: PropTypes.string,
+  classes: PropTypes.object.isRequired,
+  themes: PropTypes.object.isRequired,
+  onClose: PropTypes.func,
+};
+
+export default withThemes(styles)(Navigation);

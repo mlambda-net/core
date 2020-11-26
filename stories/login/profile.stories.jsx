@@ -5,9 +5,9 @@ import { AppBar, Toolbar } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
-import Label from '@mlambda-net/core/common/label';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
+import { Label } from '@mlambda-net/core/common';
 
 const user = {
   name: 'Roy',

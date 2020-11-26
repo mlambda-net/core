@@ -1,9 +1,8 @@
 import React from 'react';
-import { withStyles, withTheme } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import withLanguage from '@mlambda-net/core/lang/language';
 import Typography from '@material-ui/core/Typography';
 import { Box } from '@material-ui/core';
+import { withThemes } from '@mlambda-net/core/utils';
 
 const styles = () => ({
   label: {
@@ -43,4 +42,4 @@ Label.protoTypes = {
   style: PropTypes.element,
 };
 
-export default withStyles(styles)(withTheme(withLanguage(Label)));
+export default withThemes(styles)(Label);
