@@ -17,9 +17,9 @@ const language = new LocalizedStrings({
 });
 
 const styles = (theme) => {
-  console.log(theme)
   return ({})
 };
+
 
 class Title extends React.Component {
   constructor(props) {
