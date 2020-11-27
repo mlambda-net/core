@@ -1,5 +1,3 @@
-
-
-export * from './routeprovider'
-export * from './link'
-export * from './display'
+export * from './routeprovider';
+export * from './link';
+export * from './display';

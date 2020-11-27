@@ -1,11 +1,11 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import login from '../assets/img/login.png';
-import { Label, LeftImage } from '@mlambda-net/core/common';
+import { LeftImage } from '@mlambda-net/core/common';
 import { SignIn } from '@mlambda-net/core/login';
 import { withUtils } from '@mlambda-net/core/utils';
 import Recovery from '@mlambda-net/core/login/recovery';
-import Button from '@material-ui/core/Button';
+import { Action, State } from '@mlambda-net/core/common';
 
 const styles = (themes) => ({
   root: {
@@ -24,21 +24,9 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.route = this.props.route;
-    this.state = { forgot: false };
+    this.state = { actual: 'login' };
     this.onLogin = this.onLoginHandle.bind(this);
-    this.onForgor = this.onForgotHandle.bind(this);
-  }
-
-  show(isForgot) {
-    if (isForgot) {
-      return <Recovery onClose={() => this.setState({ forgot: false })} />;
-    }
-    return (
-      <SignIn
-        onForgot={() => this.setState({ forgot: true })}
-        onLogin={(user) => this.login(user)}
-      />
-    );
+    this.onForgot = this.onForgotHandle.bind(this);
   }
 
   login(data) {
@@ -52,7 +40,17 @@ class Login extends React.Component {
       <Box className={classes.root}>
         <Box width={'500px'}>
           <LeftImage img={<img src={login} width="100%" alt="img" />}>
-            {this.show(this.state.forgot)}
+            <Action actual={this.state.actual}>
+              <State name="login">
+                <SignIn
+                  onForgot={() => this.setState({ actual: 'recovery' })}
+                  onLogin={(user) => this.login(user)}
+                />
+              </State>
+              <State name="recovery">
+                <Recovery onClose={() => this.setState({ actual: 'login' })} />
+              </State>
+            </Action>
           </LeftImage>
         </Box>
       </Box>

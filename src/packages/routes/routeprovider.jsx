@@ -2,34 +2,35 @@ import * as React from 'react';
 
 const RContext = React.createContext();
 
+let dispatcher = {};
+let route_list = [];
+
 function routeReducer(state, action) {
   switch (action.type) {
     case 'to': {
-      return { ...state, actual: action.payload };
-    }
-    case 'add': {
-      let c = { ...state };
-      c.routes.push(action.payload);
-      return c;
+      return {
+        ...state,
+        maps: state.maps.map((c) =>
+          c.name === action.payload.name
+            ? { ...c, actual: action.payload.to }
+            : c
+        ),
+      };
     }
   }
 }
 
-let ddd = {};
-
 function RouteProvider({ children, routes }) {
-  const [state, dispatch] = React.useReducer(routeReducer, routes);
-  ddd = dispatch;
-  return (
-    <RContext.Provider value={{ state: state, dispatch: dispatch }}>
-      {' '}
-      {children}{' '}
-    </RContext.Provider>
-  );
-}
+  route_list = routes.map((r) => {
+    return {
+      name: r.name,
+      routes: r.routes,
+    };
+  });
 
-function Router() {
-  return ddd;
+  const [state, dispatch] = React.useReducer(routeReducer, { maps: routes });
+  dispatcher = dispatch;
+  return <RContext.Provider value={state}>{children}</RContext.Provider>;
 }
 
 function Routes() {
@@ -37,7 +38,11 @@ function Routes() {
   if (context === undefined) {
     throw new Error('RouteContext must be used within a RouteProvider');
   }
-  return context.state;
+  return context;
 }
 
-export { RouteProvider, Router, Routes };
+function AddRoutes(route) {
+  route_list.push(route);
+}
+
+export { RouteProvider, AddRoutes, dispatcher, Routes };

@@ -12,7 +12,7 @@ class App extends React.Component {
     <ThemeProvider theme={theme}>
       <LangProvider lang="en">
         <RouteProvider routes={routes}>
-          <Display />
+          <Display name="global" />
         </RouteProvider>
       </LangProvider>
     </ThemeProvider>

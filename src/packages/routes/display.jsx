@@ -2,21 +2,27 @@ import { Routes } from '@mlambda-net/core/routes/routeprovider';
 
 import * as React from 'react';
 
+const Display = ({ name }) => {
+  const routes = Routes();
 
-const Display = () => {
+  const r = routes.maps.filter((route) => route.name === name);
 
-  const { actual, routes } = Routes()
-  let Component = () => <div />
-  const filter = routes.filter((route) => {
-    if (route.name === actual) {
-      return route
+  if (r.length > 0) {
+    const global = r[0];
+
+    let Component = () => <div />;
+    const filter = global.routes.filter((route) => {
+      if (route.name === global.actual) {
+        return route;
+      }
+    });
+    if (filter.length > 0) {
+      Component = filter[0].component;
     }
-  })
-  if (filter.length > 0) {
-    Component = filter[0].component
+    return <Component />;
+  } else {
+    return <span />;
   }
-  return <Component />
+};
 
-}
-
-export {Display}
+export { Display };
