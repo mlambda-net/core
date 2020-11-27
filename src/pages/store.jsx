@@ -3,8 +3,11 @@ import React from 'react';
 import { withStyles, withTheme } from '@material-ui/core/styles';
 import cls from 'clsx';
 import Box from '@material-ui/core/Box';
-import { Header } from '@mlambda-net/core/common';
+import { Header, Label } from '@mlambda-net/core/common';
 import Navigation from '@mlambda-net/core/common/navigation';
+import Profile from '@mlambda-net/core/login/profile';
+import Button from '@material-ui/core/Button';
+import { Toolbar } from '@material-ui/core';
 
 const drawerWidth = 240;
 
@@ -46,6 +49,28 @@ class Store extends React.Component {
 
   render() {
     const { classes } = this.props;
+
+    const content = () => {
+      return (
+        <Box>
+          <Label
+            label="Name"
+            style={{ paddingTop: '10px' }}
+            value="Roy Gonzalez"
+          />
+          <Label
+            label="Email"
+            style={{ paddingTop: '10px' }}
+            value="yordivad@gmail.com"
+          />
+        </Box>
+      );
+    };
+
+    const actions = () => {
+      return <Button>Update</Button>;
+    };
+
     return (
       <Box className={classes.root}>
         <div className={classes.header}>
@@ -55,8 +80,16 @@ class Store extends React.Component {
             onClick={this.openDrawer}
             className={cls(classes.collapse, {
               [classes.collapseShift]: this.state.open,
-            })}
-          />
+            })}>
+            <Profile
+              user={{ name: 'Roy Gonzalez', email: 'yordivad@gmail.com' }}
+              content={content}
+              actions={actions}
+              open="true"
+              width="250px"
+              height="300px"
+            />
+          </Header>
           <Navigation
             width={drawerWidth}
             name="Welcome"

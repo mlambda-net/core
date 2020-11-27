@@ -1,12 +1,12 @@
-import { Recovery, SignIn } from '@mlambda-net/core/login';
+import Store from './pages/store';
+import Login from './pages/login';
 
 const routes = {
-  actual : "login",
+  actual: 'login',
   routes: [
-    { path: "login", name: 'login',  component: SignIn },
-    { path: "recovery", name: 'recovery', component: Recovery }
-  ]
-}
+    { path: 'login', name: 'login', component: Login },
+    { path: 'store', name: 'store', component: Store },
+  ],
+};
 
-
-export default routes
+export default routes;

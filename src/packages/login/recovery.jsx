@@ -14,12 +14,14 @@ const language = new LocalizedStrings({
     email: 'email',
     invalidEmail: 'email is not valid',
     submit: 'recovery',
+    cancel: 'cancel',
   },
   es: {
     recovery: 'Recuperar contraseña',
     email: 'correo',
     invalidEmail: 'el correo es invalido',
     submit: 'recuperar',
+    cancel: 'cancelar',
   },
 });
 
@@ -62,13 +64,23 @@ class Recovery extends React.Component {
           </FormControl>
         </Box>
         <Box p={1} m={1} display="flex" justifyContent="flex-end">
-          <Button
-            variant="outlined"
-            color="primary"
-            disabled={!this.isValid()}
-            onClick={this.recoveryClick}>
-            {language.submit}
-          </Button>
+          <Box p={1}>
+            <Button
+              variant="outlined"
+              color="primary"
+              onClick={() => this.props.onClose()}>
+              {language.cancel}
+            </Button>
+          </Box>
+          <Box p={1}>
+            <Button
+              variant="outlined"
+              color="primary"
+              disabled={!this.isValid()}
+              onClick={this.recoveryClick}>
+              {language.recovery}
+            </Button>
+          </Box>
         </Box>
       </Box>
     );
@@ -96,7 +108,7 @@ class Recovery extends React.Component {
 
   recoveryHandle() {
     if (this.isValid()) {
-      return { email: this.state.email };
+      this.onRecovery({ email: this.state.email });
     }
   }
 }
@@ -105,6 +117,8 @@ Recovery.protoTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
   lang: PropTypes.string,
+  onRecovery: PropTypes.func,
+  onClose: PropTypes.func,
 };
 
 export default withUtils(styles)(Recovery);

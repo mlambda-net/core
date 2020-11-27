@@ -1,41 +1,43 @@
-import * as React from 'react'
+import * as React from 'react';
 
-
-const RContext = React.createContext()
+const RContext = React.createContext();
 
 function routeReducer(state, action) {
-
   switch (action.type) {
     case 'to': {
-      return {...state, actual: action.payload}
+      return { ...state, actual: action.payload };
     }
-    case 'add' : {
-      let c = {...state}
-      c.routes.push(action.payload)
-      return c
+    case 'add': {
+      let c = { ...state };
+      c.routes.push(action.payload);
+      return c;
     }
   }
 }
 
-function RouteProvider ({children, routes}) {
-  const [state, dispatch] = React.useReducer(routeReducer, routes)
-  return <RContext.Provider value={{ state: state, dispatch: dispatch }}> {children} </RContext.Provider>
+let ddd = {};
+
+function RouteProvider({ children, routes }) {
+  const [state, dispatch] = React.useReducer(routeReducer, routes);
+  ddd = dispatch;
+  return (
+    <RContext.Provider value={{ state: state, dispatch: dispatch }}>
+      {' '}
+      {children}{' '}
+    </RContext.Provider>
+  );
 }
 
 function Router() {
-  const context = React.useContext(RContext)
-  if (context === undefined) {
-    throw new Error('RouteContext must be used within a RouteProvider')
-  }
-  return context.dispatch
+  return ddd;
 }
 
 function Routes() {
-  const context = React.useContext(RContext)
+  const context = React.useContext(RContext);
   if (context === undefined) {
-    throw new Error('RouteContext must be used within a RouteProvider')
+    throw new Error('RouteContext must be used within a RouteProvider');
   }
-  return context.state
+  return context.state;
 }
 
-export {RouteProvider, Router, Routes}
+export { RouteProvider, Router, Routes };
