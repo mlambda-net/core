@@ -43,6 +43,7 @@ class Login extends React.Component {
             <Action actual={this.state.actual}>
               <State name="login">
                 <SignIn
+                  title="Login"
                   onForgot={() => this.setState({ actual: 'recovery' })}
                   onLogin={(user) => this.login(user)}
                 />
