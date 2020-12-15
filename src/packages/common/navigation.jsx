@@ -6,7 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import { withThemes } from '@mlambda-net/core/utils';
+import withThemes from '@mlambda-net/core/utils/withThemes';
 
 const styles = (theme) => ({
   root: {

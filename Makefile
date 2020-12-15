@@ -1,5 +1,5 @@
 
-.PHONY: build deploy
+.PHONY: build test deploy
 
 build:
 	babel src --out-dir ./src --ignore "src/**/*.js; src/node_modules; src/**/package.json"
@@ -7,3 +7,5 @@ build:
 deploy:
 	./scripts/publish.sh $(git describe --abbrev=0 --tags)
 
+test:
+	npm test

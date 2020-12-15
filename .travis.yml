@@ -4,4 +4,4 @@ node_js:
   - "14.15.1"
 
 script:
-  - make build deploy
+  - make build test deploy

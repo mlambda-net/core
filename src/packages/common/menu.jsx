@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
-import { withThemes } from '@mlambda-net/core/utils';
+import withThemes from '@mlambda-net/core/utils/withThemes';
 
 const styles = (theme) => ({
   menu: {

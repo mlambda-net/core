@@ -6,7 +6,7 @@ import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Title } from '@mlambda-net/core/common';
-import { withUtils } from '@mlambda-net/core/utils';
+import withUtils from '@mlambda-net/core/utils/withUtils';
 
 const language = new LocalizedStrings({
   en: {

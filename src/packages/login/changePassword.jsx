@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import LocalizedStrings from 'react-localization';
-import { withUtils } from '@mlambda-net/core/utils';
+import withUtils from '@mlambda-net/core/utils/withUtils';
 import { Title } from '@mlambda-net/core/common';
 
 const language = new LocalizedStrings({

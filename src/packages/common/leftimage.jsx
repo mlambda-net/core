@@ -3,7 +3,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
-import { withThemes } from '@mlambda-net/core/utils';
+import withThemes from '@mlambda-net/core/utils/withThemes';
 
 const styles = (theme) => ({});
 

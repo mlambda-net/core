@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import LocalizedStrings from 'react-localization';
-import { withThemes, withUtils } from '@mlambda-net/core/utils';
+import withUtils from '@mlambda-net/core/utils/withUtils';
 
 const language = new LocalizedStrings({
   en: {

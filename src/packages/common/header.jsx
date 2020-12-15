@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { AppBar, Toolbar, IconButton } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
-import { withThemes } from '@mlambda-net/core/utils';
+import withThemes from '@mlambda-net/core/utils/withThemes';
 
 const styles = (theme) => ({
   root: {

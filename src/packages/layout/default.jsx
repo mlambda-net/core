@@ -1,7 +1,7 @@
 import React from 'react';
 import cls from 'clsx';
 
-import { withThemes } from '@mlambda-net/core/utils';
+import withThemes from '@mlambda-net/core/utils/withThemes';
 import { Header, Navigation } from '@mlambda-net/core/common';
 
 const drawerWidth = 240;
@@ -60,5 +60,5 @@ class DefaultLayout extends React.Component {
   };
 }
 
-DefaultLayout = withThemes(styles)(DefaultLayout)
-export {DefaultLayout};
+DefaultLayout = withThemes(styles)(DefaultLayout);
+export { DefaultLayout };

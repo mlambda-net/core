@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import { Box } from '@material-ui/core';
 import { Option } from '@mlambda-net/core/common';
-import { withUtils } from '@mlambda-net/core/utils';
+import withUtils from '@mlambda-net/core/utils/withUtils';
 
 const language = new LocalizedStrings({
   en: {
