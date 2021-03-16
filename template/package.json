@@ -9,6 +9,7 @@
   },
 
   "publishConfig": {
+    "cache": "~/.npm",
     "access": "restricted",
     "registry": "https://npm.pkg.github.com"
   },
