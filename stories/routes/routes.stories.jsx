@@ -4,13 +4,16 @@ import { Display, RouteProvider, withRoute } from '@mlambda-net/core/routes';
 import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
 
-const routes = {
-  actual: 'login',
-  routes: [
-    { path: 'login', name: 'login', component: SignIn },
-    { path: 'recovery', name: 'recovery', component: Recovery },
-  ],
-};
+const routes = [
+  {
+    name: 'global',
+    actual: 'login',
+    routes: [
+      { path: 'login', name: 'login', component: SignIn },
+      { path: 'recovery', name: 'recovery', component: Recovery },
+    ],
+  },
+];
 
 export const RouterStory = () => {
   const Menu = withRoute(({ route }) => (
@@ -26,7 +29,7 @@ export const RouterStory = () => {
   return (
     <RouteProvider routes={routes}>
       <Menu />
-      <Display />
+      <Display name="global" />
     </RouteProvider>
   );
 };

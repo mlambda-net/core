@@ -10,7 +10,7 @@ const ThemeDecorator = (storyFn) => {
   const [{ location: location, theme: themeName }] = useGlobals();
   return (
     <ThemeProvider theme={theme}>
-      <RouteProvider routes={{}}>
+      <RouteProvider routes={[]}>
         <LangProvider lang={location}>{storyFn()}</LangProvider>
       </RouteProvider>
     </ThemeProvider>

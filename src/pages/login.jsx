@@ -3,7 +3,7 @@ import Box from '@material-ui/core/Box';
 import login from '../assets/img/login.png';
 import { LeftImage } from '@mlambda-net/core/common';
 import { SignIn } from '@mlambda-net/core/login';
-import { withUtils } from '@mlambda-net/core/utils';
+import withUtils from '@mlambda-net/core/utils/withUtils';
 import Recovery from '@mlambda-net/core/login/recovery';
 import { Action, State } from '@mlambda-net/core/common';
 
