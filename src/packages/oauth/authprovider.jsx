@@ -1,33 +1,64 @@
 import * as React from 'react';
 import { UserManager } from 'oidc-client';
-import { useState } from 'react';
+
 const AuthContext = React.createContext(null);
 
-function AuthProvider({ settings, onLogin, children }) {
-  const manager = new UserManager(settings);
-  const [user, setUser] = useState(null);
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('code') == null) {
-    manager.signinRedirect().then((c) => console.log('redirecting'));
-  } else {
-    if (user === null) {
-      manager.signinCallback().then((c) => {
-        if (onLogin != null) {
-          setUser(c);
-          onLogin({ manager, c });
-        }
-      });
-    } else {
-      onLogin(user);
-    }
+class AuthService {
+  constructor(settings) {
+    this.user = null;
+    this.manager = new UserManager(settings);
   }
 
-  return (
-    <AuthContext.Provider value={manager}>{children}</AuthContext.Provider>
-  );
+  login() {
+    this.manager.signinRedirect().then((c) => {});
+  }
+
+  isAuth() {
+    return this.user !== null;
+  }
+
+  authenticate() {
+    return new Promise((resolve) => {
+      this.manager.getUser().then((c) => {
+        if (c == null) {
+          this.manager.signinCallback().then((c) => {
+            this.user = c;
+            resolve(c);
+          });
+        } else {
+          this.user = c;
+          resolve(this.user);
+        }
+      });
+    });
+  }
 }
 
-function getAuth() {
+class AuthProvider extends React.Component {
+  constructor(props) {
+    super(props);
+    this.auth = new AuthService(props.settings);
+    const params = new URLSearchParams(window.location.search);
+    if (!this.auth.isAuth()) {
+      if (params.get('code') == null) {
+        this.auth.login();
+      } else {
+        this.auth.authenticate().then((c) => {
+          this.props.onLogin(c);
+        });
+      }
+    }
+  }
+  render() {
+    return (
+      <AuthContext.Provider value={this.auth}>
+        {this.props.children}
+      </AuthContext.Provider>
+    );
+  }
+}
+
+function GetAuth() {
   const context = React.useContext(AuthContext);
   if (context === undefined) {
     throw new Error('AuthContext must be used within a AuthProvider');
@@ -35,4 +66,4 @@ function getAuth() {
   return context;
 }
 
-export { AuthProvider, getAuth };
+export { AuthProvider, GetAuth };
