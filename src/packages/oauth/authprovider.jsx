@@ -44,7 +44,7 @@ class AuthProvider extends React.Component {
         this.auth.login();
       } else {
         this.auth.authenticate().then((c) => {
-          this.props.onLogin(c);
+          this.props.onLogin(this.auth);
         });
       }
     }
