@@ -1,19 +1,25 @@
 import * as React from 'react';
 import { UserManager } from 'oidc-client';
-
+import { useState } from 'react';
 const AuthContext = React.createContext(null);
 
 function AuthProvider({ settings, onLogin, children }) {
   const manager = new UserManager(settings);
+  const [user, setUser] = useState(null);
   const params = new URLSearchParams(window.location.search);
   if (params.get('code') == null) {
     manager.signinRedirect().then((c) => console.log('redirecting'));
   } else {
-    manager.signinCallback().then((c) => {
-      if (onLogin != null) {
-        onLogin(c);
-      }
-    });
+    if (user === null) {
+      manager.signinCallback().then((c) => {
+        if (onLogin != null) {
+          setUser(c);
+          onLogin({ manager, c });
+        }
+      });
+    } else {
+      onLogin(user);
+    }
   }
 
   return (
