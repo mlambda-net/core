@@ -10,7 +10,19 @@ class AuthService {
   }
 
   login() {
+    this.manager.removeUser().then((c) => {});
     this.manager.signinRedirect().then((c) => {});
+  }
+
+  logout() {
+    this.manager.removeUser().then((c) => {});
+    this.manager.signoutRedirect().then((c) => {});
+  }
+
+  renew() {
+    this.manager.signinSilent().then((user) => {
+      this.user = user;
+    });
   }
 
   isAuth() {
