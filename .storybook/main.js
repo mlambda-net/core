@@ -22,24 +22,6 @@ module.exports = {
         loader: 'babel-loader',
       },
     });
-    config.module.rules.push({
-      test: /\.sass$/,
-      use: [
-        {
-          loader: 'style-loader',
-        },
-        {
-          loader: 'css-loader',
-          options: {
-            sourceMap: true,
-            modules: true,
-          },
-        },
-        {
-          loader: 'sass-loader',
-        },
-      ],
-    });
     config.resolve.extensions.push('.js', '.jsx');
     config.resolve.alias['@mlambda-net/core'] = path.resolve(
       __dirname,

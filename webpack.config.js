@@ -84,10 +84,7 @@ module.exports = (env) => {
                 sourceMap: true,
                 modules: true,
               },
-            },
-            {
-              loader: 'sass-loader',
-            },
+            }
           ],
         },
         {
