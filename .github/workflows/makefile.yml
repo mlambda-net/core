@@ -21,8 +21,8 @@ jobs:
         node-version: 16
         registry-url: https://npm.pkg.github.com/
 
-    - name: Build
-      run: make build
+    #- name: Build
+    #  run: make build
 
     - name: Run test
       run: make test
