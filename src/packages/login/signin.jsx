@@ -1,11 +1,11 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import FormControl from '@material-ui/core/FormControl';
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
+import Typography from '@mui/material/Typography';
+import FormControl from '@mui/material/FormControl';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
-import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
+import TextField from '@mui/material/TextField';
+import Link from '@mui/material/Link';
 import LocalizedStrings from 'react-localization';
 import withUtils from '@mlambda-net/core/utils/withUtils';
 

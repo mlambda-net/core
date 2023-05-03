@@ -1,10 +1,10 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
-import FormControl from '@material-ui/core/FormControl';
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
+import Paper from '@mui/material/Paper';
+import FormControl from '@mui/material/FormControl';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
-import TextField from '@material-ui/core/TextField';
+import TextField from '@mui/material/TextField';
 import LocalizedStrings from 'react-localization';
 import withUtils from '@mlambda-net/core/utils/withUtils';
 import { Title } from '@mlambda-net/core/common';

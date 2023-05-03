@@ -1,8 +1,8 @@
-import { withStyles, withTheme } from '@material-ui/core/styles';
+import { withStyles, withTheme } from '@mui/styles';
 import React from 'react';
 import Item from './item';
 import Detail from './detail';
-import Collapse from '@material-ui/core/Collapse';
+import Collapse from '@mui/material/Collapse';
 
 const styles = (theme) => ({
   catalog: {

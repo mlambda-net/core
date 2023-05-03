@@ -1,32 +1,18 @@
-const path = require('path');
 
-module.exports = {
-  stories: ['../stories/**/*.stories.jsx'],
+const config = {
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
-    '@storybook/addon-actions',
     '@storybook/addon-links',
-    '@storybook/addon-knobs',
-    '@storybook/addon-viewport',
-    '@storybook/addon-toolbars',
-    '@storybook/addon-backgrounds',
-    'storybook-dark-mode',
-    '@storybook/addon-notes/register-panel',
     '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
   ],
-  webpackFinal: async (config) => {
-    // do mutation to the config
-    config.module.rules.push({
-      test: /\.(js|jsx)$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader',
-      },
-    });
-    config.resolve.extensions.push('.js', '.jsx');
-    config.resolve.alias['@mlambda-net/core'] = path.resolve(
-      __dirname,
-      '../src/packages'
-    );
-    return config;
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
+  },
+  docs: {
+    autodocs: 'tag',
   },
 };
+
+export default config;

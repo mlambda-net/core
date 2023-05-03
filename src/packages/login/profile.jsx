@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LocalizedStrings from 'react-localization';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import CardActions from '@material-ui/core/CardActions';
-import { Box } from '@material-ui/core';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import CardActions from '@mui/material/CardActions';
+import { Box } from '@mui/material';
 import { Option } from '@mlambda-net/core/common';
 import withUtils from '@mlambda-net/core/utils/withUtils';
 

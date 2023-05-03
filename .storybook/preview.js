@@ -1,10 +1,3 @@
-import { addDecorator } from '@storybook/react';
-import themeDecorator from './theme_decorator';
-import { withConsole } from '@storybook/addon-console';
-
-addDecorator(themeDecorator);
-addDecorator((storyFn, context) => withConsole()(storyFn)(context));
-
 export const globalTypes = {
   theme: {
     name: 'Theme',

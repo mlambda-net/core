@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LocalizedStrings from 'react-localization';
-import Box from '@material-ui/core/Box';
-import FormControl from '@material-ui/core/FormControl';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import Box from '@mui/material/Box';
+import FormControl from '@mui/material/FormControl';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 import { Title } from '@mlambda-net/core/common';
 import withUtils from '@mlambda-net/core/utils/withUtils';
 

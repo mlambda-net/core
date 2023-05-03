@@ -1,10 +1,10 @@
-import { withStyles, withTheme } from '@material-ui/core/styles';
+import { withStyles, withTheme } from '@mui/styles';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { CardContent, Typography, Card } from '@material-ui/core';
+import { CardContent, Typography, Card } from '@mui/material';
 
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 
 import Carousel from './carousel';
 import Description from './description';
@@ -34,7 +34,7 @@ class Detail extends React.Component {
         <Grid
           container
           direction="row"
-          justify="center"
+          justifyContent="center"
           alignItems="flex-start"
           spacing={0}>
           <Grid item xs={12} sm={12} md={5}>

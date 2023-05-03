@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LocalizedStrings from 'react-localization';
-import Box from '@material-ui/core/Box';
+import { Box } from '@mui/material';
 import withUtils from '@mlambda-net/core/utils/withUtils';
 
 const language = new LocalizedStrings({

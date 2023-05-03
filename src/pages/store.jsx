@@ -1,13 +1,13 @@
 import Catalog from '../packages/market/catalog';
 import React from 'react';
-import { withStyles, withTheme } from '@material-ui/core/styles';
+import { withStyles, withTheme } from '@mui/styles';
 import cls from 'clsx';
-import Box from '@material-ui/core/Box';
+import Box from '@mui/material/Box';
 import { Header, Label } from '@mlambda-net/core/common';
 import Navigation from '@mlambda-net/core/common/navigation';
 import Profile from '@mlambda-net/core/login/profile';
-import Button from '@material-ui/core/Button';
-import { Toolbar } from '@material-ui/core';
+import Button from '@mui/material/Button';
+import { Toolbar } from '@mui/material';
 
 const drawerWidth = 240;
 

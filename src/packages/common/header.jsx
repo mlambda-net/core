@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AppBar, Toolbar, IconButton } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
-import MenuIcon from '@material-ui/icons/Menu';
+import { AppBar, Toolbar, IconButton, Typography } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import withThemes from '@mlambda-net/core/utils/withThemes';
 
 const styles = (theme) => ({
@@ -34,7 +33,8 @@ class Header extends React.Component {
               className={classes.menuButton}
               color="inherit"
               aria-label="menu"
-              onClick={this.props.onClick}>
+              onClick={this.props.onClick}
+              size="large">
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>

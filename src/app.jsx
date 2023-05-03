@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material';
 import { theme } from './theme';
 import Login from './pages/login';
 import Store from './pages/store';
@@ -9,13 +9,15 @@ import { LangProvider } from '@mlambda-net/core/lang';
 
 class App extends React.Component {
   render = () => (
-    <ThemeProvider theme={theme}>
-      <LangProvider lang="en">
-        <RouteProvider routes={routes}>
-          <Display name="global" />
-        </RouteProvider>
-      </LangProvider>
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <LangProvider lang="en">
+          <RouteProvider routes={routes}>
+            <Display name="global" />
+          </RouteProvider>
+        </LangProvider>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 

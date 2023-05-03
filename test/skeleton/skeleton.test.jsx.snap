@@ -1,9 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Skeleton render 1`] = `
-<div
-  className="MuiBox-root MuiBox-root-1"
->
-  Skeleton
-</div>
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-8atqhb{width:100%;}",
+      }
+    }
+    data-emotion="css 8atqhb"
+  />,
+  <div
+    className="MuiBox-root css-8atqhb"
+  >
+    Skeleton
+  </div>,
+]
 `;

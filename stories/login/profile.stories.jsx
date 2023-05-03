@@ -1,12 +1,12 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/material/styles';
 import {Profile} from '@mlambda-net/core/login';
-import { AppBar, Toolbar } from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import MenuIcon from '@material-ui/icons/Menu';
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
+import { AppBar, Toolbar } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import MenuIcon from '@mui/icons-material/Menu';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import { Label } from '@mlambda-net/core/common';
 
 const user = {
@@ -47,7 +47,8 @@ export const ProfileStory = () => {
           edge="start"
           className={classes.menuButton}
           color="inherit"
-          aria-label="menu">
+          aria-label="menu"
+          size="large">
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" className={classes.title}>

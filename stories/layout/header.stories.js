@@ -13,9 +13,9 @@ var _header = _interopRequireDefault(require("@mlambda-net/core/common/header"))
 
 var _addonKnobs = require("@storybook/addon-knobs");
 
-var _IconButton = _interopRequireDefault(require("@material-ui/core/IconButton"));
+var _IconButton = _interopRequireDefault(require("@mui/material/IconButton"));
 
-var _icons = require("@material-ui/icons");
+var _icons = require("@mui/icons-material");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

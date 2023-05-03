@@ -1,15 +1,15 @@
-import { withStyles, withTheme } from '@material-ui/core/styles';
+import { withStyles, withTheme } from '@mui/styles';
 import React from 'react';
-import Card from '@material-ui/core/Card';
-import { CardMedia } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/AddShoppingCart';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import CardActions from '@material-ui/core/CardActions';
+import Card from '@mui/material/Card';
+import { CardMedia } from '@mui/material';
+import AddIcon from '@mui/icons-material/AddShoppingCart';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import CardActions from '@mui/material/CardActions';
 import PropTypes from 'prop-types';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import IconButton from '@material-ui/core/IconButton';
+import CardActionArea from '@mui/material/CardActionArea';
+import IconButton from '@mui/material/IconButton';
 
 const styles = (theme) => ({
   item: {
@@ -58,7 +58,7 @@ class Item extends React.Component {
           <CardMedia
             component="img"
             height="90"
-            image="https://camaradehaedo.com/assets/images/gallery00.jpg"
+            image="https://images.unsplash.com/photo-1526352319234-c349ead2152a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
             title="Audifonos"
           />
           <CardContent>
@@ -78,10 +78,10 @@ class Item extends React.Component {
               </Typography>
             </div>
             <div className={classes.buttons}>
-              <IconButton color="primary" aria-label="Add favorite">
+              <IconButton color="primary" aria-label="Add favorite" size="large">
                 <FavoriteIcon />
               </IconButton>
-              <IconButton color="primary" aria-label="Add">
+              <IconButton color="primary" aria-label="Add" size="large">
                 <AddIcon />
               </IconButton>
             </div>

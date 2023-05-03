@@ -1,7 +1,5 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
+import {Paper, Grid, Box} from '@mui/material';
 import PropTypes from 'prop-types';
 import withThemes from '@mlambda-net/core/utils/withThemes';
 

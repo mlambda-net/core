@@ -2,11 +2,11 @@ import {
   BottomNavigation,
   BottomNavigationAction,
   CardMedia,
-} from '@material-ui/core';
-import BackIcon from '@material-ui/icons/ArrowBack';
-import ForwardIcon from '@material-ui/icons/ArrowForward';
+} from '@mui/material';
+import BackIcon from '@mui/icons-material/ArrowBack';
+import ForwardIcon from '@mui/icons-material/ArrowForward';
 import React from 'react';
-import { withStyles, withTheme } from '@material-ui/core/styles';
+import { withStyles, withTheme } from '@mui/styles';
 import PropTypes from 'prop-types';
 
 const styles = (theme) => ({

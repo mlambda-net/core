@@ -1,5 +1,5 @@
 import React from 'react';
-import { Details } from '@material-ui/icons';
+import { Details } from '@mui/icons-material';
 import Detail from '../../src/packages/market/detail';
 
 export const DetailStory = () => <Detail />;

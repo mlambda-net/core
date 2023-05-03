@@ -14,8 +14,8 @@ module.exports = (env) => {
       path: path.resolve(__dirname, 'dist'),
     },
     devServer: {
-      publicPath: '/',
-      contentBase: path.join(__dirname, 'dist'),
+      //publicPath: '/',
+      //contentBase: path.join(__dirname, 'dist'),
     },
     resolve: {
       extensions: ['.js', '.jsx'],
@@ -99,7 +99,7 @@ module.exports = (env) => {
         filename: './index.html',
       }),
       new Dotenv({
-        path: `.env.${env.NODE_ENV}`,
+        path: `.env.${env.PATH}`,
       }),
     ],
     target: 'web',

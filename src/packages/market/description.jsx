@@ -1,9 +1,9 @@
-import { Button, CardContent, Typography } from '@material-ui/core';
+import { Button, CardContent, Typography } from '@mui/material';
 
 import React from 'react';
-import { withStyles, withTheme } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import CancelIcon from '@material-ui/icons/Cancel';
+import { withStyles, withTheme } from '@mui/styles';
+import IconButton from '@mui/material/IconButton';
+import CancelIcon from '@mui/icons-material/Cancel';
 import PropTypes from 'prop-types';
 
 const styles = (theme) => ({
@@ -50,7 +50,8 @@ class Description extends React.Component {
             <IconButton
               aria-label="close"
               color="primary"
-              onClick={this.props.onClick}>
+              onClick={this.props.onClick}
+              size="large">
               <CancelIcon />
             </IconButton>
           </div>

@@ -1,8 +1,8 @@
-import { createMuiTheme } from '@material-ui/core/styles';
-import pink from '@material-ui/core/colors/pink';
-import teal from '@material-ui/core/colors/teal';
+import { createTheme } from '@mui/material/styles';
+import {pink, teal} from '@mui/material/colors';
 
-export const theme = createMuiTheme({
+
+export const theme = createTheme({
   typography: {
     fontSize: 12,
     fontFamily: [
@@ -37,4 +37,5 @@ export const theme = createMuiTheme({
     },
     divider: '#BDBDBD',
   },
+  spacing: 4,
 });

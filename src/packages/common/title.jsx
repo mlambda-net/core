@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LocalizedStrings from 'react-localization';
-import Typography from '@material-ui/core/Typography';
+import Typography from '@mui/material/Typography';
 import withThemes from '@mlambda-net/core/utils/withThemes';
 
 const language = new LocalizedStrings({

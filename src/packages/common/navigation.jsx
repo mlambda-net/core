@@ -1,11 +1,10 @@
 import React from 'react';
-import Drawer from '@material-ui/core/Drawer';
+import Drawer from '@mui/material/Drawer';
 import PropTypes from 'prop-types';
-import { withStyles, withTheme } from '@material-ui/core/styles';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import withThemes from '@mlambda-net/core/utils/withThemes';
 
 const styles = (theme) => ({
@@ -58,7 +57,7 @@ class Navigation extends React.Component {
             <Typography variant="h6" className={classes.title}>
               {name}
             </Typography>
-            <IconButton color="secondary" onClick={this.onChange}>
+            <IconButton color="secondary" onClick={this.onChange} size="large">
               <ArrowBackIcon />
             </IconButton>
           </div>

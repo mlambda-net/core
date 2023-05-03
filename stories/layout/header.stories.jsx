@@ -1,8 +1,8 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, number, text, withKnobs } from '@storybook/addon-knobs';
-import IconButton from '@material-ui/core/IconButton';
-import { AccountCircle } from '@material-ui/icons';
+import IconButton from '@mui/material/IconButton';
+import { AccountCircle } from '@mui/icons-material';
 import { Header } from '@mlambda-net/core/common';
 
 export const HeaderStory = () => (
@@ -12,7 +12,8 @@ export const HeaderStory = () => (
       aria-controls="menu-appbar"
       aria-haspopup="true"
       onClick={action('profile')}
-      color="inherit">
+      color="inherit"
+      size="large">
       <AccountCircle />
     </IconButton>
   </Header>
