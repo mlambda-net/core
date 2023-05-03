@@ -10,9 +10,16 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
     - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+        registry-url: https://npm.pkg.github.com/
 
     - name: Build
       run: make build
@@ -22,3 +29,5 @@ jobs:
 
     - name: Run deploy
       run: make deploy
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
