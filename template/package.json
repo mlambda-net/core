@@ -5,7 +5,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mlambda-net/web.git",
-    "directory": "src/packages"
+    "directory": "src/components"
   },
 
   "publishConfig": {

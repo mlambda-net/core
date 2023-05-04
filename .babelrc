@@ -13,7 +13,7 @@
           "./"
         ],
         "alias": {
-          "@mlambda-net/core": "./src/packages",
+          "@mlambda-net/core": "./src/components",
         }
       }
     ]

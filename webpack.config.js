@@ -3,7 +3,9 @@ const Dotenv = require('dotenv-webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
+
   console.log(env.NODE_ENV);
+
   return {
     entry: {
       index: './src/index.jsx',
@@ -14,38 +16,13 @@ module.exports = (env) => {
       path: path.resolve(__dirname, 'dist'),
     },
     devServer: {
-      //publicPath: '/',
-      //contentBase: path.join(__dirname, 'dist'),
     },
     resolve: {
       extensions: ['.js', '.jsx'],
       alias: {
-        '@mlambda-net/core': path.resolve(__dirname, './src/packages'),
-        /*
-        react: path.resolve(__dirname, './node_modules/react'),
-        'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
-        assets: path.resolve(__dirname, 'assets'),
-        */
+        '@mlambda-net/core': path.resolve(__dirname, './src/components'),
       },
     },
-    /*
-    externals: {
-      // Don't bundle react or react-dom
-      react: {
-        commonjs: 'react',
-        commonjs2: 'react',
-        amd: 'React',
-        root: 'React',
-      },
-      'react-dom': {
-        commonjs: 'react-dom',
-        commonjs2: 'react-dom',
-        amd: 'ReactDOM',
-        root: 'ReactDOM',
-      },
-    },
-
-     */
     optimization: {
       splitChunks: {
         chunks: 'all',

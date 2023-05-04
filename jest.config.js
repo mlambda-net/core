@@ -6,7 +6,7 @@ module.exports = {
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'js', 'jsx'],
   testPathIgnorePatterns: ['./node_modules/'],
   moduleNameMapper: {
-    '@mlambda-net/core/(.*)$': '<rootDir>/src/packages/$1',
+    '@mlambda-net/core/(.*)$': '<rootDir>/src/components/$1',
   },
 
   collectCoverageFrom: [

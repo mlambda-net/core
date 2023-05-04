@@ -1,4 +1,4 @@
-import Catalog from '../packages/market/catalog';
+import Catalog from '../components/market/catalog';
 import React from 'react';
 import { withStyles, withTheme } from '@mui/styles';
 import cls from 'clsx';
