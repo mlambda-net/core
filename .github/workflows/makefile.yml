@@ -21,16 +21,12 @@ jobs:
         node-version: 16
         registry-url: https://npm.pkg.github.com/
 
-<<<<<<< HEAD
-    #- name: Build
-    #  run: make build
-=======
+       
     - name: configure
       run: ./scripts/configure.sh
 
     - name: Build
       run: make build
->>>>>>> e18f1aa (Fixing Build)
 
     - name: Run test
       run: make test
