@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ "master" ]
 
+env:
+  GITHUB_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 jobs:
   build:
 
@@ -21,17 +24,14 @@ jobs:
         node-version: 16
         registry-url: https://npm.pkg.github.com/
 
-       
     - name: configure
       run: ./scripts/configure.sh
 
-    - name: Build
-      run: make build
+    #- name: Build
+    #  run: make build
 
     - name: Run test
       run: make test
 
     - name: Run deploy
       run: make deploy
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
