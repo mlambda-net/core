@@ -1,5 +1,6 @@
 import React from 'react';
-import Catalog from '../../src/components/market/catalog';
+import Catalog from "@mlambda-net/core/market/catalog";
+
 
 export const CatalogStory = () => <Catalog />;
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import Item from '../../src/components/market/item';
+import Item from "@mlambda-net/core/market/item";
+
 
 export const ItemStory = () => <Item />;
 

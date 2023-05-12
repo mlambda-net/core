@@ -5,6 +5,7 @@ import { withStyles, withTheme } from '@mui/styles';
 import IconButton from '@mui/material/IconButton';
 import CancelIcon from '@mui/icons-material/Cancel';
 import PropTypes from 'prop-types';
+import withThemes from "@mlambda-net/core/utils/withThemes";
 
 const styles = (theme) => ({
   root: {
@@ -25,7 +26,7 @@ const styles = (theme) => ({
     textAlign: 'justify',
     padding: theme.spacing(2),
   },
-});
+})
 
 class Description extends React.Component {
   static defaultProps = {
@@ -79,4 +80,4 @@ class Description extends React.Component {
   }
 }
 
-export default withStyles(styles)(withTheme(Description));
+export default withThemes(styles)(Description);

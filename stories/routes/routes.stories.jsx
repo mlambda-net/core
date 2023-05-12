@@ -1,8 +1,8 @@
 import React from 'react';
 import { SignIn, Recovery } from '@mlambda-net/core/login';
 import { Display, RouteProvider, withRoute } from '@mlambda-net/core/routes';
-import ListItem from '@materia@mui/material/ListItem';
-import List from '@materia@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import List from '@mui/material/List';
 
 const routes = [
   {

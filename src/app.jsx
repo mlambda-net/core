@@ -1,8 +1,6 @@
 import React from 'react';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material';
 import { theme } from './theme';
-import Login from './pages/login';
-import Store from './pages/store';
 import { Display, RouteProvider } from '@mlambda-net/core/routes';
 import routes from './routes';
 import { LangProvider } from '@mlambda-net/core/lang';

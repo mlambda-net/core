@@ -8,6 +8,7 @@ import ForwardIcon from '@mui/icons-material/ArrowForward';
 import React from 'react';
 import { withStyles, withTheme } from '@mui/styles';
 import PropTypes from 'prop-types';
+import withThemes from "@mlambda-net/core/utils/withThemes";
 
 const styles = (theme) => ({
   root: {
@@ -70,4 +71,4 @@ class Carousel extends React.Component {
   }
 }
 
-export default withStyles(styles)(withTheme(Carousel));
+export default withThemes(styles)(Carousel);

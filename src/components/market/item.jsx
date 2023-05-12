@@ -10,6 +10,7 @@ import CardActions from '@mui/material/CardActions';
 import PropTypes from 'prop-types';
 import CardActionArea from '@mui/material/CardActionArea';
 import IconButton from '@mui/material/IconButton';
+import withThemes from "@mlambda-net/core/utils/withThemes";
 
 const styles = (theme) => ({
   item: {
@@ -92,4 +93,4 @@ class Item extends React.Component {
   }
 }
 
-export default withStyles(styles)(withTheme(Item));
+export default withThemes(styles)(Item);

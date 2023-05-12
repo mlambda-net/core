@@ -1,14 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { expect } from '@jest/globals';
+import { expect, test } from "@jest/globals";
 import { Skeleton } from '@mlambda-net/core/skeleton';
-import { LangProvider } from '@mlambda-net/core/lang';
+import Wrap from "../util";
 
 test('Skeleton render', () => {
   const item = renderer.create(
-    <LangProvider lang="en">
+    <Wrap>
       <Skeleton />
-    </LangProvider>
+    </Wrap>
   );
   let tree = item.toJSON();
   expect(tree).toMatchSnapshot();

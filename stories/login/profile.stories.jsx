@@ -1,6 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@mui/material/styles';
-import {Profile} from '@mlambda-net/core/login';
+import { makeStyles } from '@mui/styles';
+import { Profile } from '@mlambda-net/core/login';
 import { AppBar, Toolbar } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';

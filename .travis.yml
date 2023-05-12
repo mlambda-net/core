@@ -1,7 +1,0 @@
-dist: focal
-language: node_js
-node_js:
-  - "14.15.1"
-
-script:
-  - make build test deploy

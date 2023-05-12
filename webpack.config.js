@@ -3,9 +3,6 @@ const Dotenv = require('dotenv-webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = (env) => {
-
-  console.log(env.NODE_ENV);
-
   return {
     entry: {
       index: './src/index.jsx',
@@ -15,8 +12,7 @@ module.exports = (env) => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
-    devServer: {
-    },
+    devServer: {},
     resolve: {
       extensions: ['.js', '.jsx'],
       alias: {
@@ -61,7 +57,7 @@ module.exports = (env) => {
                 sourceMap: true,
                 modules: true,
               },
-            }
+            },
           ],
         },
         {

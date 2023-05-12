@@ -4,6 +4,10 @@ import Item from './item';
 import Detail from './detail';
 import Collapse from '@mui/material/Collapse';
 
+
+import withThemes from "@mlambda-net/core/utils/withThemes";
+
+
 const styles = (theme) => ({
   catalog: {
     display: 'flex',
@@ -62,4 +66,4 @@ class Catalog extends React.Component {
   }
 }
 
-export default withStyles(styles)(withTheme(Catalog));
+export default withThemes(styles)(Catalog);

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Details } from '@mui/icons-material';
-import Detail from '../../src/components/market/detail';
+import Detail from "@mlambda-net/core/market/detail";
+
 
 export const DetailStory = () => <Detail />;
 

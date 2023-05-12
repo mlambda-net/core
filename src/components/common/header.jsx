@@ -9,7 +9,7 @@ const styles = (theme) => ({
     flexGrow: 1,
   },
   menuButton: {
-    padding: theme.spacing(1),
+
   },
   title: {
     flexGrow: 1,

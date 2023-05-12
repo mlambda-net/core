@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useRef } from "react";
 import renderer from 'react-test-renderer';
-import { expect } from '@jest/globals';
+import { expect, test } from "@jest/globals";
 import { Header } from '@mlambda-net/core/common';
-import { ThemeProvider } from '@mui/material';
-import { theme } from '../theme';
+import Wrap from "../util";
 
 test('Header render', () => {
+
   const item = renderer.create(
-    <ThemeProvider theme={theme}>
+    <Wrap>
       <Header name="app">
         <div>hello</div>
       </Header>
-    </ThemeProvider>
+    </Wrap>
   );
+
   let tree = item.toJSON();
   expect(tree).toMatchSnapshot();
 });

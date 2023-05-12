@@ -11,7 +11,6 @@ const styles = (theme) => ({
     fontSize: theme.typography.subtitle1.fontSize,
     fontFamily: theme.typography.fontFamily,
     color: theme.palette.text.primary,
-    padding: theme.spacing(1),
     cursor: 'pointer',
   },
 });

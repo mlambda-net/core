@@ -1,3 +1,9 @@
+import { StyledEngineProvider, ThemeProvider } from '@mui/material';
+import { LangProvider } from '@mlambda-net/core/lang';
+import React from 'react';
+import { black, light } from '../src/theme';
+import template from './template.mdx';
+
 export const globalTypes = {
   theme: {
     name: 'Theme',
@@ -5,7 +11,6 @@ export const globalTypes = {
     defaultValue: 'light',
     toolbar: {
       icon: 'circlehollow',
-      // array of plain string values or MenuItem shape (see below)
       items: ['light', 'dark'],
     },
   },
@@ -19,9 +24,11 @@ export const globalTypes = {
     toolbar: {
       icon: 'globe',
       items: [
-        { value: 'en', right: '', title: 'English' },
-        { value: 'es', right: '', title: 'Español' },
-        { value: 'zh', right: '', title: '中文' },
+        { value: 'en', right: '🇺🇸', title: 'English' },
+        { value: 'fr', right: '🇫🇷', title: 'Français' },
+        { value: 'es', right: '🇪🇸', title: 'Español' },
+        { value: 'zh', right: '🇨🇳', title: '中文' },
+        { value: 'kr', right: '🇰🇷', title: '한국어' },
       ],
     },
   },
@@ -192,4 +199,32 @@ export const parameters = {
       },
     ],
   },
+};
+
+const getTheme = (name) => {
+  if (name === 'light') {
+    return light;
+  }
+  return black;
+};
+
+export default {
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {},
+    docs: {
+      page: template,
+    },
+  },
+  decorators: [
+    (Story, context) => (
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={getTheme(context.globals.theme)}>
+          <LangProvider lang={context.globals.location}>
+            <Story />
+          </LangProvider>
+        </ThemeProvider>
+      </StyledEngineProvider>
+    ),
+  ],
 };

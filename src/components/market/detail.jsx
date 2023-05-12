@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 
 import Carousel from './carousel';
 import Description from './description';
+import withThemes from "@mlambda-net/core/utils/withThemes";
 
 const styles = (theme) => ({
   root: {
@@ -56,4 +57,4 @@ class Detail extends React.Component {
   }
 }
 
-export default withStyles(styles)(withTheme(Detail));
+export default withThemes(styles)(Detail);

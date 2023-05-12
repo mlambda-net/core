@@ -1,6 +1,5 @@
 import React from 'react';
-import { text } from '@storybook/addon-knobs';
-import {SignIn} from '@mlambda-net/core/login'
+import { SignIn } from '@mlambda-net/core/login'
 import { action } from '@storybook/addon-actions';
 
 import login from '../../src/assets/img/login.png';
