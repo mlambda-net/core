@@ -6,10 +6,11 @@ VERSION=$(shell git describe --abbrev=0 --tags)
 
 
 build:
-	yarn version --new-version $(VERSION)
 	yarn build
 
 deploy:
+	yarn config set version-git-tag false
+	yarn config set version-tag-prefix ""
 	yarn publish --new-version $(VERSION)
 
 test:
