@@ -6,6 +6,7 @@ VERSION= $(shell git describe --abbrev=0 --tags)
 
 
 build:
+	yarn version --new-version $(VERSION)
 	yarn build
 	yarn pack
 
