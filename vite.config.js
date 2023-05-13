@@ -25,6 +25,7 @@ export default defineConfig({
         '@mui/lab',
         '@mui/material',
         '@mui/styles',
+        'gsap',
       ],
       output: {
         globals: {
@@ -37,6 +38,7 @@ export default defineConfig({
           '@mui/lab': '@mui/lab',
           '@mui/material': '@mui/material',
           '@mui/styles': '@mui/styles',
+          'gsap': 'gsap'
         },
       },
     },
