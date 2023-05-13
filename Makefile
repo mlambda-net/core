@@ -1,5 +1,5 @@
-SHELL = /bin/bash
-VERSION= $(shell git describe --abbrev=0 --tags)
+SHELL=/bin/bash
+VERSION=$(shell git describe --abbrev=0 --tags)
 
 
 .PHONY: build test deploy
@@ -8,10 +8,9 @@ VERSION= $(shell git describe --abbrev=0 --tags)
 build:
 	yarn version --new-version $(VERSION)
 	yarn build
-	yarn pack
 
 deploy:
-	yarn publish
+	yarn publish --new-version $(VERSION)
 
 test:
 	yarn test

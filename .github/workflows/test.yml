@@ -24,8 +24,11 @@ jobs:
         node-version: 16
         registry-url: https://npm.pkg.github.com/
 
-    - name: configure
-      run: ./scripts/configure.sh
+    - name: install yarn
+      run: npm install --global yarn
+
+    - name: install dependencies
+      run: yarn install
 
     - name: Run test
       run: make test

@@ -1,5 +1,5 @@
-export { default as Carousel } from './Carousel';
-export { default as Catalog } from './Catalog';
-export { default as Description } from './Description';
-export { default as Detail } from './Detail';
-export { default as Item } from './Item';
+export { default as Carousel } from './carousel';
+export { default as Catalog } from './catalog';
+export { default as Description } from './description';
+export { default as Detail } from './detail';
+export { default as Item } from './item';
