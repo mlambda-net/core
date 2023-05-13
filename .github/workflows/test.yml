@@ -18,17 +18,18 @@ jobs:
       packages: write
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-        registry-url: https://npm.pkg.github.com/
+    - name: checkout
+      uses: actions/checkout@v3
 
-    - name: install yarn
-      run: npm install --global yarn
+    - name: node setup
+      uses: actions/setup-node@v3
+      with:
+        node-version: 19
+        registry-url: https://npm.pkg.github.com/
+        cache: 'yarn'
 
     - name: install dependencies
-      run: yarn install
+      run: yarn install --frozen-lockfile
 
     - name: Run test
       run: make test
