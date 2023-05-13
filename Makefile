@@ -6,10 +6,11 @@ VERSION= $(shell git describe --abbrev=0 --tags)
 
 
 build:
-	babel src --out-dir ./src --ignore "src/**/*.js; src/node_modules; src/**/package.json"
+	yarn build
+	yarn pack
 
 deploy:
-	./scripts/publish.sh $(VERSION)
+	yarn publish
 
 test:
-	npm test
+	yarn test
