@@ -28,4 +28,4 @@ class Action extends React.Component {
   }
 }
 
-export { Action };
+export default Action;

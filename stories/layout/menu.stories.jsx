@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu } from '@mlambda-net/core/common';
+import { Menu } from '@mlambda-net/web-core/common';
 
 export default {
   title: 'MLambda/Layout/Menu',

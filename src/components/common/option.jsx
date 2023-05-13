@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { IconButton } from '@mui/material';
-import Box from '@mui/material/Box';
-import withThemes from '@mlambda-net/core/utils/withThemes';
+import { Box, IconButton } from '@mui/material';
+import { withThemes } from '@mlambda-net/web-core/utils';
 
 const styles = (theme) => ({
   container: {
@@ -47,14 +45,5 @@ class Option extends React.Component {
     );
   }
 }
-
-Option.protoTypes = {
-  className: '',
-  classes: PropTypes.object.isRequired,
-  open: PropTypes.bool,
-  icon: PropTypes.element,
-  width: PropTypes.string,
-  height: PropTypes.string,
-};
 
 export default withThemes(styles)(Option);

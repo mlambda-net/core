@@ -1,6 +1,5 @@
 import React from 'react';
-import Item from "@mlambda-net/core/market/item";
-
+import Item from '@mlambda-net/web-core/market/item';
 
 export const ItemStory = () => <Item />;
 

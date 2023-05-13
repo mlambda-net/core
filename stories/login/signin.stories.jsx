@@ -1,8 +1,6 @@
 import React from 'react';
-import { SignIn } from '@mlambda-net/core/login'
+import { SignIn } from '@mlambda-net/web-core/login';
 import { action } from '@storybook/addon-actions';
-
-import login from '../../src/assets/img/login.png';
 
 export const LoginStory = () => (
   <SignIn

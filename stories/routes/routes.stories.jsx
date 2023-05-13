@@ -1,8 +1,7 @@
 import React from 'react';
-import { SignIn, Recovery } from '@mlambda-net/core/login';
-import { Display, RouteProvider, withRoute } from '@mlambda-net/core/routes';
-import ListItem from '@mui/material/ListItem';
-import List from '@mui/material/List';
+import { Recovery, SignIn } from '@mlambda-net/web-core/login';
+import { Display, Link, RouteProvider } from '@mlambda-net/web-core/routes';
+import { List, ListItem } from '@mui/material';
 
 const routes = [
   {
@@ -15,26 +14,28 @@ const routes = [
   },
 ];
 
-export const RouterStory = () => {
-  const Menu = withRoute(({ route }) => (
-    <List component="nav" aria-label="main mailbox folders">
-      <ListItem button onClick={() => route.to('login')}>
-        Login
-      </ListItem>
-      <ListItem button onClick={() => route.to('recovery')}>
-        Recovery
-      </ListItem>
-    </List>
-  ));
-  return (
-    <RouteProvider routes={routes}>
-      <Menu />
-      <Display name="global" />
-    </RouteProvider>
-  );
-};
-
 export default {
   title: 'MLambda/router/route',
-  component: RouterStory,
+  component: RouteProvider,
+};
+
+let Menu = ({ route }) => (
+  <List component="nav" aria-label="main mailbox folders">
+    <ListItem onClick={() => route.to('login')}>Login</ListItem>
+    <ListItem onClick={() => route.to('recovery')}>Recovery</ListItem>
+  </List>
+);
+
+export const Primary = {
+  args: {
+    routes: routes,
+  },
+  render: (args) => (
+    <RouteProvider {...args}>
+      <Link>
+        <Menu />
+      </Link>
+      <Display name="global" />
+    </RouteProvider>
+  ),
 };

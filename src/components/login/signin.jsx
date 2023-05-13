@@ -1,13 +1,14 @@
 import React from 'react';
-import Typography from '@mui/material/Typography';
-import FormControl from '@mui/material/FormControl';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import PropTypes from 'prop-types';
-import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import LocalizedStrings from 'react-localization';
-import withUtils from '@mlambda-net/core/utils/withUtils';
+import { withUtils } from '@mlambda-net/web-core/utils';
+import {
+  Box,
+  Button,
+  FormControl,
+  Link,
+  TextField,
+  Typography,
+} from '@mui/material';
 
 const language = new LocalizedStrings({
   en: {
@@ -149,15 +150,5 @@ class SignIn extends React.Component {
     return this.state.validEmail && this.state.validPassword;
   }
 }
-
-SignIn.protoTypes = {
-  title: PropTypes.bool,
-  className: PropTypes.string,
-  classes: PropTypes.object.isRequired,
-  onLogin: PropTypes.func,
-  onForgot: PropTypes.func,
-  icon: PropTypes.element,
-  lang: PropTypes.string,
-};
 
 export default withUtils(styles)(SignIn);

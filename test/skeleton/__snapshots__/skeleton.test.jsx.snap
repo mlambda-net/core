@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Skeleton render 1`] = `
+<div
+  className="MuiBox-root css-8atqhb"
+>
+  Skeleton
+</div>
+`;

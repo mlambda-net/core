@@ -1,12 +1,12 @@
 import React from 'react';
-import { LanguageContext } from '@mlambda-net/core/lang/context';
+import { LanguageContext } from '@mlambda-net/web-core/lang/context';
 
-const withLanguage = (Component) => {
+let withLanguage = (Component) => {
   return (props) => (
     <LanguageContext.Consumer>
-      {(value) => <Component lang={value} {...props}  />}
+      {(value) => <Component lang={value} {...props} />}
     </LanguageContext.Consumer>
   );
 };
 
-export {withLanguage};
+export default withLanguage;

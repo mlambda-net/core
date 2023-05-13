@@ -4,4 +4,4 @@ const State = () => {
   return <span />;
 };
 
-export { State };
+export default State;

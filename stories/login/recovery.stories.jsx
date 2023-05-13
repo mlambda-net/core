@@ -1,11 +1,9 @@
 import React from 'react';
 
-import  {Recovery}  from '@mlambda-net/core/login';
+import { Recovery } from '@mlambda-net/web-core/login';
 
 export const RecoveryStory = () => (
-  <Recovery>
-    {text('Title', 'Welcome')}
-  </Recovery>
+  <Recovery>{text('Title', 'Welcome')}</Recovery>
 );
 
 export default {

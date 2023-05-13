@@ -1,12 +1,12 @@
-import { withLanguage } from '@mlambda-net/core/lang/language';
-import { withRoute } from '@mlambda-net/core/routes';
 import { withStyles, withTheme } from '@mui/styles';
-import { withValidation } from '@mlambda-net/core/common';
+import { withLanguage } from '@mlambda-net/web-core/lang';
+import { withValidation } from '@mlambda-net/web-core/common';
+import { WithLink } from '@mlambda-net/web-core/routes/index.jsx';
 
 const withUtils = (styles) => {
   return (Component) =>
     withTheme(
-      withStyles(styles)(withLanguage(withRoute(withValidation(Component))))
+      withStyles(styles)(withLanguage(WithLink(withValidation(Component)))),
     );
 };
 

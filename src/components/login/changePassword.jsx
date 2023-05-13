@@ -1,13 +1,8 @@
 import React from 'react';
-import Paper from '@mui/material/Paper';
-import FormControl from '@mui/material/FormControl';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import PropTypes from 'prop-types';
-import TextField from '@mui/material/TextField';
+import { Box, Button, FormControl, Paper, TextField } from '@mui/material';
 import LocalizedStrings from 'react-localization';
-import withUtils from '@mlambda-net/core/utils/withUtils';
-import { Title } from '@mlambda-net/core/common';
+import { withUtils } from '@mlambda-net/web-core/utils';
+import { Title } from '@mlambda-net/web-core/common';
 
 const language = new LocalizedStrings({
   en: {
@@ -154,12 +149,5 @@ class ChangePassword extends React.Component {
     return this.state.validNewPassword && this.state.validOldPassword;
   }
 }
-
-ChangePassword.protoTypes = {
-  className: PropTypes.string,
-  classes: PropTypes.object.isRequired,
-  onChange: PropTypes.func,
-  lang: PropTypes.string,
-};
 
 export default withUtils(styles)(ChangePassword);

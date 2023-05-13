@@ -1,11 +1,7 @@
 import React from 'react';
-import Drawer from '@mui/material/Drawer';
-import PropTypes from 'prop-types';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import { Divider, Drawer, IconButton, Typography } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import withThemes from '@mlambda-net/core/utils/withThemes';
+import { withThemes } from '@mlambda-net/web-core/utils';
 
 const styles = (theme) => ({
   root: {
@@ -40,7 +36,7 @@ class Navigation extends React.Component {
   }
 
   render = () => {
-    const { name, position, classes, themes, open, children } = this.props;
+    const { name, position, classes, open, children } = this.props;
     return (
       <div className={classes.root}>
         <Drawer
@@ -67,15 +63,5 @@ class Navigation extends React.Component {
     );
   };
 }
-
-Navigation.protoTypes = {
-  name: PropTypes.string,
-  open: PropTypes.bool,
-  position: PropTypes.string,
-  width: PropTypes.string,
-  classes: PropTypes.object.isRequired,
-  themes: PropTypes.object.isRequired,
-  onClose: PropTypes.func,
-};
 
 export default withThemes(styles)(Navigation);

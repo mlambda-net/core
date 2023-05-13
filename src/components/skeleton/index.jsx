@@ -1,1 +1,1 @@
-export Skeleton from './skeleton';
+export { default as Skeleton } from './skeleton';

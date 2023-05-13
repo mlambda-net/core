@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import IconButton from '@mui/material/IconButton';
 import { AccountCircle } from '@mui/icons-material';
-import { Header } from '@mlambda-net/core/common';
+import { Header } from '@mlambda-net/web-core/common';
 
 export default {
   title: 'MLambda/Layout/Header',
@@ -20,7 +20,11 @@ export const Primary = {
     onClick: action('button-click'),
   },
 
-  render: (args) => <Header {...args} />,
+  render: (args) => (
+    <div style={{ height: '100px' }}>
+      <Header {...args} />
+    </div>
+  ),
 };
 
 export const WithProfile = {
@@ -30,16 +34,18 @@ export const WithProfile = {
   },
 
   render: (args) => (
-    <Header {...args}>
-      <IconButton
-        aria-label="account of current user"
-        aria-controls="menu-appbar"
-        aria-haspopup="true"
-        onClick={action('profile')}
-        color="inherit"
-        size="large">
-        <AccountCircle />
-      </IconButton>
-    </Header>
+    <div style={{ height: '100px' }}>
+      <Header {...args}>
+        <IconButton
+          aria-label="account of current user"
+          aria-controls="menu-appbar"
+          aria-haspopup="true"
+          onClick={action('profile')}
+          color="inherit"
+          size="large">
+          <AccountCircle />
+        </IconButton>
+      </Header>
+    </div>
   ),
 };

@@ -1,14 +1,9 @@
-import { withStyles, withTheme } from '@mui/styles';
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import { CardContent, Typography, Card } from '@mui/material';
-
-import Grid from '@mui/material/Grid';
-
+import { Card, Grid } from '@mui/material';
 import Carousel from './carousel';
 import Description from './description';
-import withThemes from "@mlambda-net/core/utils/withThemes";
+import withThemes from '@mlambda-net/web-core/utils/withThemes';
 
 const styles = (theme) => ({
   root: {
@@ -18,11 +13,6 @@ const styles = (theme) => ({
 });
 
 class Detail extends React.Component {
-  static defaultProps = {
-    data: PropTypes.object,
-    onClick: PropTypes.func,
-  };
-
   constructor(props) {
     super(props);
   }

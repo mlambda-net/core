@@ -1,9 +1,9 @@
 import React from 'react';
-import { ThemeProvider, StyledEngineProvider } from '@mui/material';
+import { StyledEngineProvider, ThemeProvider } from '@mui/material';
 import { theme } from './theme';
-import { Display, RouteProvider } from '@mlambda-net/core/routes';
+import { Display, RouteProvider } from '@mlambda-net/web-core/routes';
 import routes from './routes';
-import { LangProvider } from '@mlambda-net/core/lang';
+import { LangProvider } from '@mlambda-net/web-core/lang';
 
 class App extends React.Component {
   render = () => (

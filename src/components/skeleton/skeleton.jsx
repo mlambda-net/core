@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import LocalizedStrings from 'react-localization';
 import { Box } from '@mui/material';
-import withUtils from '@mlambda-net/core/utils/withUtils';
+import withUtils from '@mlambda-net/web-core/utils/withUtils';
 
 const language = new LocalizedStrings({
   en: {},
@@ -24,11 +23,5 @@ class Skeleton extends React.Component {
     return <Box width="100%">Skeleton</Box>;
   }
 }
-
-Skeleton.protoTypes = {
-  className: PropTypes.string,
-  classes: PropTypes.object.isRequired,
-  lang: PropTypes.string,
-};
 
 export default withUtils(styles)(Skeleton);

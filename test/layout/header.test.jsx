@@ -1,17 +1,16 @@
-import React, { useRef } from "react";
+import React from 'react';
 import renderer from 'react-test-renderer';
-import { expect, test } from "@jest/globals";
-import { Header } from '@mlambda-net/core/common';
-import Wrap from "../util";
+import { expect, test } from 'vitest';
+import { Header } from '@mlambda-net/web-core/common';
+import Wrap from '../util';
 
 test('Header render', () => {
-
   const item = renderer.create(
     <Wrap>
       <Header name="app">
         <div>hello</div>
       </Header>
-    </Wrap>
+    </Wrap>,
   );
 
   let tree = item.toJSON();

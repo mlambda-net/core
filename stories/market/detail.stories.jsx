@@ -1,6 +1,5 @@
 import React from 'react';
-import Detail from "@mlambda-net/core/market/detail";
-
+import Detail from '@mlambda-net/web-core/market/detail';
 
 export const DetailStory = () => <Detail />;
 

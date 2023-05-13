@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import LocalizedStrings from 'react-localization';
-import Typography from '@mui/material/Typography';
-import withThemes from '@mlambda-net/core/utils/withThemes';
+import { Typography } from '@mui/material';
+import { withThemes } from '@mlambda-net/web-core/utils';
 
 const language = new LocalizedStrings({
   en: {},
@@ -28,12 +27,5 @@ class Title extends React.Component {
     );
   }
 }
-
-Title.protoTypes = {
-  className: PropTypes.string,
-  classes: PropTypes.object.isRequired,
-  lang: PropTypes.string,
-  title: PropTypes.string,
-};
 
 export default withThemes(styles)(Title);

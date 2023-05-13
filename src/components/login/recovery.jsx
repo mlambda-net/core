@@ -1,12 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import LocalizedStrings from 'react-localization';
-import Box from '@mui/material/Box';
-import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import { Title } from '@mlambda-net/core/common';
-import withUtils from '@mlambda-net/core/utils/withUtils';
+import { Box, Button, FormControl, TextField } from '@mui/material';
+import { Title } from '@mlambda-net/web-core/common';
+import { withUtils } from '@mlambda-net/web-core/utils';
 
 const language = new LocalizedStrings({
   en: {
@@ -112,13 +108,5 @@ class Recovery extends React.Component {
     }
   }
 }
-
-Recovery.protoTypes = {
-  className: PropTypes.string,
-  classes: PropTypes.object.isRequired,
-  lang: PropTypes.string,
-  onRecovery: PropTypes.func,
-  onClose: PropTypes.func,
-};
 
 export default withUtils(styles)(Recovery);

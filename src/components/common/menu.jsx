@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Button } from '@mui/material';
-import withThemes from '@mlambda-net/core/utils/withThemes';
+import { withThemes } from '@mlambda-net/web-core/utils';
 
 const styles = (theme) => ({
   menu: {
@@ -25,11 +24,5 @@ class Menu extends React.Component {
     );
   }
 }
-
-Menu.protoTypes = {
-  name: PropTypes.string,
-  onClick: PropTypes.func,
-  classes: PropTypes.object.isRequired,
-};
 
 export default withThemes(styles)(Menu);

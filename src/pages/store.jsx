@@ -1,13 +1,11 @@
 import Catalog from '../components/market/catalog';
 import React from 'react';
-import { withStyles, withTheme } from '@mui/styles';
 import cls from 'clsx';
 import Box from '@mui/material/Box';
-import { Header, Label } from '@mlambda-net/core/common';
-import Navigation from '@mlambda-net/core/common/navigation';
-import Profile from '@mlambda-net/core/login/profile';
+import { Header, Label, Navigation } from '@mlambda-net/web-core/common';
+import { Profile } from '@mlambda-net/web-core/login';
 import Button from '@mui/material/Button';
-import { Toolbar } from '@mui/material';
+import withUtils from '@mlambda-net/web-core/utils/withUtils';
 
 const drawerWidth = 240;
 
@@ -103,7 +101,7 @@ class Store extends React.Component {
             {
               [classes.collapseShift]: this.state.open,
             },
-            classes.content
+            classes.content,
           )}>
           <Catalog />
         </div>
@@ -112,4 +110,4 @@ class Store extends React.Component {
   }
 }
 
-export default withStyles(styles)(withTheme(Store));
+export default withUtils(styles)(Store);

@@ -1,13 +1,15 @@
 import React from 'react';
-import { makeStyles } from '@mui/styles';
-import { Profile } from '@mlambda-net/core/login';
-import { AppBar, Toolbar } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import { Profile } from '@mlambda-net/web-core/login';
+import {
+  AppBar,
+  Box,
+  Button,
+  IconButton,
+  Toolbar,
+  Typography,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import { Label } from '@mlambda-net/core/common';
+import { Label } from '@mlambda-net/web-core/common';
 
 const user = {
   name: 'Roy',
@@ -15,21 +17,15 @@ const user = {
   email: 'yordivad@gmail.com',
 };
 
-const useStyles = makeStyles(() => ({
-  title: {
-    flexGrow: 1,
-  },
-}));
-
-const content = () => {
+const content = ({ user }) => {
   return (
     <Box>
-      <Label label="Name" style={{ paddingTop: '10px' }} value="Roy Gonzalez" />
       <Label
-        label="Email"
+        label="Name"
         style={{ paddingTop: '10px' }}
-        value="yordivad@gmail.com"
+        value={user.name + ' ' + user.lastName}
       />
+      <Label label="Email" style={{ paddingTop: '10px' }} value={user.email} />
     </Box>
   );
 };
@@ -38,36 +34,41 @@ const actions = () => {
   return <Button>Update</Button>;
 };
 
-export const ProfileStory = () => {
-  const classes = useStyles();
-  return (
-    <AppBar>
-      <Toolbar>
-        <IconButton
-          edge="start"
-          className={classes.menuButton}
-          color="inherit"
-          aria-label="menu"
-          size="large">
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" className={classes.title}>
-          News
-        </Typography>
-        <Profile
-          user={user}
-          content={content}
-          actions={actions}
-          open="true"
-          width="250px"
-          height="300px"
-        />
-      </Toolbar>
-    </AppBar>
-  );
+export default {
+  title: 'MLambda/Login/Profile',
+  component: Profile,
+  tags: ['autodocs'],
 };
 
-export default {
-  title: 'MLambda/Login/profile',
-  component: ProfileStory,
+export const Primary = {
+  args: {
+    name: 'News',
+    user: user,
+  },
+  render: (args) => (
+    <div style={{ height: '400px' }}>
+      <AppBar>
+        <Toolbar>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            size="large">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" style={{ flexGrow: '1' }}>
+            {args.name}
+          </Typography>
+          <Profile
+            user={args.user}
+            content={content}
+            actions={actions}
+            open="true"
+            width="250px"
+            height="300px"
+          />
+        </Toolbar>
+      </AppBar>
+    </div>
+  ),
 };

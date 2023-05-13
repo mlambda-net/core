@@ -1,16 +1,15 @@
-import { withStyles, withTheme } from '@mui/styles';
 import React from 'react';
-import Card from '@mui/material/Card';
-import { CardMedia } from '@mui/material';
-import AddIcon from '@mui/icons-material/AddShoppingCart';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import CardActions from '@mui/material/CardActions';
-import PropTypes from 'prop-types';
-import CardActionArea from '@mui/material/CardActionArea';
-import IconButton from '@mui/material/IconButton';
-import withThemes from "@mlambda-net/core/utils/withThemes";
+import { withThemes } from '@mlambda-net/web-core/utils';
+import { AddShoppingCart, Favorite } from '@mui/icons-material';
+import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  IconButton,
+  Typography,
+} from '@mui/material';
 
 const styles = (theme) => ({
   item: {
@@ -35,12 +34,6 @@ const styles = (theme) => ({
 });
 
 class Item extends React.Component {
-  static defaultProps = {
-    itemID: PropTypes.number,
-    classes: PropTypes.object.isRequired,
-    onClick: PropTypes.func,
-  };
-
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -79,11 +72,14 @@ class Item extends React.Component {
               </Typography>
             </div>
             <div className={classes.buttons}>
-              <IconButton color="primary" aria-label="Add favorite" size="large">
-                <FavoriteIcon />
+              <IconButton
+                color="primary"
+                aria-label="Add favorite"
+                size="large">
+                <Favorite />
               </IconButton>
               <IconButton color="primary" aria-label="Add" size="large">
-                <AddIcon />
+                <AddShoppingCart />
               </IconButton>
             </div>
           </div>

@@ -1,11 +1,9 @@
-import { Button, CardContent, Typography } from '@mui/material';
+import { CardContent, Typography } from '@mui/material';
 
 import React from 'react';
-import { withStyles, withTheme } from '@mui/styles';
 import IconButton from '@mui/material/IconButton';
 import CancelIcon from '@mui/icons-material/Cancel';
-import PropTypes from 'prop-types';
-import withThemes from "@mlambda-net/core/utils/withThemes";
+import withThemes from '@mlambda-net/web-core/utils/withThemes';
 
 const styles = (theme) => ({
   root: {
@@ -26,14 +24,9 @@ const styles = (theme) => ({
     textAlign: 'justify',
     padding: theme.spacing(2),
   },
-})
+});
 
 class Description extends React.Component {
-  static defaultProps = {
-    data: PropTypes.object,
-    onClick: PropTypes.func,
-  };
-
   constructor(props) {
     super(props);
   }

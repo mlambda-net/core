@@ -1,8 +1,8 @@
-import { Routes } from '@mlambda-net/core/routes/routeprovider';
+import { Routes } from '@mlambda-net/web-core/routes/routeprovider';
 
 import * as React from 'react';
 
-const Display = ({ name }) => {
+let Display = ({ name }) => {
   const routes = Routes();
 
   const r = routes.maps.filter((route) => route.name === name);
@@ -25,4 +25,4 @@ const Display = ({ name }) => {
   }
 };
 
-export { Display };
+export default Display;

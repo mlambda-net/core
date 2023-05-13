@@ -1,11 +1,10 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import login from '../assets/img/login.png';
-import { LeftImage } from '@mlambda-net/core/common';
-import { SignIn } from '@mlambda-net/core/login';
-import withUtils from '@mlambda-net/core/utils/withUtils';
-import Recovery from '@mlambda-net/core/login/recovery';
-import { Action, State } from '@mlambda-net/core/common';
+import { Action, LeftImage, State } from '@mlambda-net/web-core/common';
+import { SignIn } from '@mlambda-net/web-core/login';
+import withUtils from '@mlambda-net/web-core/utils/withUtils';
+import Recovery from '@mlambda-net/web-core/login/recovery';
 
 const styles = (themes) => ({
   root: {

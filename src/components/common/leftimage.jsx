@@ -1,9 +1,8 @@
 import React from 'react';
-import {Paper, Grid, Box} from '@mui/material';
-import PropTypes from 'prop-types';
-import withThemes from '@mlambda-net/core/utils/withThemes';
+import { Box, Grid, Paper } from '@mui/material';
+import { withThemes } from '@mlambda-net/web-core/utils';
 
-const styles = (theme) => ({});
+const styles = () => ({});
 
 class LeftImage extends React.Component {
   constructor(props) {
@@ -40,12 +39,5 @@ class LeftImage extends React.Component {
     );
   }
 }
-
-LeftImage.protoTypes = {
-  className: PropTypes.string,
-  classes: PropTypes.object.isRequired,
-  style: PropTypes.string,
-  img: PropTypes.element,
-};
 
 export default withThemes(styles)(LeftImage);

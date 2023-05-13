@@ -1,14 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import LocalizedStrings from 'react-localization';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import CardActions from '@mui/material/CardActions';
-import { Box } from '@mui/material';
-import { Option } from '@mlambda-net/core/common';
-import withUtils from '@mlambda-net/core/utils/withUtils';
+import { Box, Card, CardActions, CardContent, Typography } from '@mui/material';
+import { Option } from '@mlambda-net/web-core/common';
+import { withUtils } from '@mlambda-net/web-core/utils';
 
 const language = new LocalizedStrings({
   en: {
@@ -47,7 +42,6 @@ class Profile extends React.Component {
 
   render() {
     language.setLanguage(this.props.lang);
-
     const Content = this.props.content;
     const Actions = this.props.actions;
     const { classes } = this.props;
@@ -67,7 +61,7 @@ class Profile extends React.Component {
               gutterBottom>
               {language.title}
             </Typography>
-            <Content />
+            <Content user={this.props.user} />
           </CardContent>
 
           <CardActions className={classes.actions}>
@@ -80,17 +74,5 @@ class Profile extends React.Component {
     );
   }
 }
-
-Profile.protoTypes = {
-  className: '',
-  classes: PropTypes.object.isRequired,
-  user: PropTypes.object,
-  lang: PropTypes.string,
-  content: PropTypes.element,
-  actions: PropTypes.element,
-  width: PropTypes.string,
-  height: PropTypes.string,
-  style: PropTypes.string,
-};
 
 export default withUtils(styles)(Profile);

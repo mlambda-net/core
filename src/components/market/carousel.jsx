@@ -6,9 +6,8 @@ import {
 import BackIcon from '@mui/icons-material/ArrowBack';
 import ForwardIcon from '@mui/icons-material/ArrowForward';
 import React from 'react';
-import { withStyles, withTheme } from '@mui/styles';
 import PropTypes from 'prop-types';
-import withThemes from "@mlambda-net/core/utils/withThemes";
+import withThemes from '@mlambda-net/web-core/utils/withThemes';
 
 const styles = (theme) => ({
   root: {

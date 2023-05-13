@@ -1,12 +1,9 @@
-import { withStyles, withTheme } from '@mui/styles';
 import React from 'react';
 import Item from './item';
 import Detail from './detail';
 import Collapse from '@mui/material/Collapse';
 
-
-import withThemes from "@mlambda-net/core/utils/withThemes";
-
+import withThemes from '@mlambda-net/web-core/utils/withThemes';
 
 const styles = (theme) => ({
   catalog: {

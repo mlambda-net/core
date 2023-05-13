@@ -1,11 +1,15 @@
 import React from 'react';
-import { Skeleton } from '@mlambda-net/core/skeleton';
-
-export const SkeletonStory = () => (
-  <Skeleton>{text('Title', 'Welcome')}</Skeleton>
-);
+import { Skeleton } from '@mlambda-net/web-core/skeleton';
 
 export default {
   title: 'MLambda/template/skeleton',
-  component: SkeletonStory,
+  component: Skeleton,
+  tags: ['autodocs'],
+};
+
+export const Primary = {
+  args: {
+    name: 'welcome',
+  },
+  render: (args) => <Skeleton {...args} />,
 };

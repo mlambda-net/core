@@ -1,5 +1,5 @@
 import React from 'react';
-import { LanguageContext } from '@mlambda-net/core/lang/context';
+import { LanguageContext } from '@mlambda-net/web-core/lang/context';
 
 class LangProvider extends React.Component {
   render() {
@@ -10,6 +10,7 @@ class LangProvider extends React.Component {
     );
   }
 }
+
 LangProvider.contextType = LanguageContext;
 
-export { LangProvider };
+export default LangProvider;

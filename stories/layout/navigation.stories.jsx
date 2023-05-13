@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigation } from '@mlambda-net/core/common';
+import { Navigation } from '@mlambda-net/web-core/common';
 import { action } from '@storybook/addon-actions';
 
 export default {
@@ -16,8 +16,10 @@ export const Primary = {
     onClose: action('closing'),
   },
   render: (args) => (
-    <Navigation {...args}>
-      <div>Hello</div>
-    </Navigation>
+    <div style={{ height: '300px' }}>
+      <Navigation {...args}>
+        <div>Hello</div>
+      </Navigation>
+    </div>
   ),
 };
