@@ -21,18 +21,18 @@ class Header extends React.Component {
     const { children, name, classes } = this.props;
     return (
       <div className={classes.root}>
-        <AppBar position="fixed" className={this.props.className}>
+        <AppBar position='fixed' className={this.props.className}>
           <Toolbar>
             <IconButton
               style={{ display: this.props.open ? 'none' : '' }}
-              edge="start"
-              color="inherit"
-              aria-label="menu"
+              edge='start'
+              color='inherit'
+              aria-label='menu'
               onClick={this.props.onClick}
-              size="large">
+              size='large'>
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" className={classes.title}>
+            <Typography variant='h6' className={classes.title}>
               {name}
             </Typography>
             {children}
